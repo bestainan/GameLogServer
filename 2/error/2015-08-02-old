@@ -1,0 +1,20 @@
+2015-08-03 01:01:02.066372 all_action_split   Error: [Errno 2] No such file or directory: '/home/ubuntu/data/HaiMaLogs/20001_2015-08-02/20001_2015-08-02_00000' 
+
+2015-08-03 01:01:02.066419 all_action_split   Error: [Errno 2] No such file or directory: '/home/ubuntu/data/HaiMaLogs/30001_2015-08-02/30001_2015-08-02_00000' 
+
+ ______ 10005
+ ______ 10006
+我的电脑快没电了！ ______ 10006
+ ______ 10006
+2015-08-03 01:01:28.235341 User_detail   Error: [Errno 2] No such file or directory: '/home/ubuntu/data/HaiMaLogs/20001_2015-08-02/20001_2015-08-02_00000' 
+
+2015-08-03 01:01:28.235341 User_detail   Error: [Errno 2] No such file or directory: '/home/ubuntu/data/HaiMaLogs/30001_2015-08-02/30001_2015-08-02_00000' 
+
+2015-08-03 01:01:52.309463 <module 'catch_split_log.active_union.union_sign' from '/opt/GameLogParse/catch_split_log/active_union/union_sign.pyc'>   Error: [Errno 24] Too many open files: '/home/ubuntu/data/HaiMaLogParse/10003/2015-08-02/all_action/EVENT_ACTION_UNION_SIGN' 
+
+2015-08-03 01:01:52.309982 <module 'catch_split_log.active_union.union_shop' from '/opt/GameLogParse/catch_split_log/active_union/union_shop.pyc'>   Error: (2004, "Can't create TCP/IP socket (24)") 
+
+2015-08-03 01:01:52.321368 <module 'catch_split_log.active_union.union_stage' from '/opt/GameLogParse/catch_split_log/active_union/union_stage.pyc'>   Error: [Errno 24] Too many open files: '/home/ubuntu/data/HaiMaLogParse/10001/2015-08-02/tables/UNION_STAGE' 
+
+2015-08-03 01:01:52.321368 <module 'catch_split_log.active_union.friend_count' from '/opt/GameLogParse/catch_split_log/active_union/friend_count.pyc'>   Error: (2004, "Can't create TCP/IP socket (24)") 
+

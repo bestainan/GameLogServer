@@ -1,0 +1,67 @@
+{% extends "base/base.html" %}
+
+{%block right_panel%}
+        <div class="maincontent">
+            <div class="maincontentinner">
+                <div class="widget">
+                    <h4 class="widgettitle">UID:{{uid}},玩家昵称:{{name}}</h4>
+                    <div class="widgetcontent">
+                        <form class="stdform" action="/Tyranitar6/data_edit/set_player_data/" method="post">
+                            <div>
+                                <label style="width: 300px">{{key_name}}：</label>
+                                <input type="hidden" name="server_id" value={{server_id}}>
+                                <input type="hidden" name="type" value="{{type}}">
+                                <input type="hidden" name="user_id" value={{uid}}>
+                                <input type="hidden" name="key" value={{key}}>
+                                {% if type == 'int'%}
+                                    <span class="field"><input name="value" class="input-small" type="text"  onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" value={{value}} ></span>
+                                {%elif type == 'float' %}
+                                    <span class="field"><input name="value" class="input-small" type="text" onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')" > </span>
+                                {% elif type == 'bool'%}
+                                    <span class="field">
+                                    <select  name="value" class="uniformselect" value={{value}}>
+                                        <option value="True">{{True}}</option>
+                                        <option value="False">{{False}}</option>
+                                    </select>
+                                {% endif %}
+                                <!--<label>日期:</label>-->
+                                <!--<span class="field"><input style="cursor:pointer" readonly="true" id="start_date_picker"  name="start_date" class="input-small" type="text" value={{start_date}}></span>-->
+                                <!--<label>游戏区服:</label>-->
+                                <!--<span class="field">-->
+                                <!--<select id="server_id" name="server_id" class="uniformselect" value={{server_id}}>-->
+                                    <!--{% for content in server_list %}-->
+                                        <!--<option value="{{content.id}}" {% ifequal content.id cur_server_id %}selected="selected"{% endifequal %}>-->
+                                            <!--{{content.name}}-->
+                                        <!--</option>-->
+                                    <!--{% endfor %}-->
+                                <!--</select>-->
+                                </span>
+                                <span class="stdformbutton">
+                                    <button class="btn btn-primary">&nbsp; 提&nbsp;交&nbsp;</button>
+                                </span>
+                                <!--<button class="btn btn-primary">确定</button>-->
+                            </div>
+                        </form>
+                    </div><!--widgetcontent-->
+                </div><!--widget-->
+
+                <!--<div class="widget">-->
+                    <!--<h4 class="widgettitle">修改玩家{{uid}}的数据</h4>-->
+                    <!--<div class="widgetcontent">-->
+                        <!--<form class="stdform" action="/Tyranitar6/data_edit/set_player_data/" method="post">-->
+                            <!--<span style="font-size: large;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;玩家所属服务器：{{server_id}} ,要修改玩家的"{{key_name}}"</span>-->
+                            <!--<div class="par">-->
+
+                            <!--<span class="field">-->
+                                <!--<input type="text"  name="user_name" class="input-medium" placeholder="请输入要修改的数量" value={{value}}>-->
+                                <!--<button type="submit"  class="btn btn-primary">&nbsp; 提&nbsp;交&nbsp;</button>-->
+                            <!--&lt;!&ndash;<button class="btn btn-primary">确定</button>&ndash;&gt;-->
+                                <!--</span>-->
+                            <!--</div>-->
+                        <!--</form>-->
+                    <!--</div>&lt;!&ndash;widgetcontent&ndash;&gt;-->
+                <!--</div>&lt;!&ndash;widget&ndash;&gt;-->
+            </div>
+        </div>
+{%endblock%}
+

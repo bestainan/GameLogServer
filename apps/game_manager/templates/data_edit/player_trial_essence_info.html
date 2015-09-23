@@ -1,0 +1,83 @@
+{% extends "base/base.html" %}
+
+{%block right_panel%}
+
+        <div class="maincontent">
+            <div class="maincontentinner">
+
+                <div class="widget">
+
+                    <h4 class="widgettitle">用户信息</h4>
+                    <div class="widgetcontent">
+                        <form class="stdform" action="/Tyranitar6/data_edit/player_trial_essence_info/" method="post">
+                            <span style="font-size: large;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UID，帐号ID，玩家昵称，帐号 <span style="font-size: large; color: red; font-weight: 900">--3选1--</span></span>
+                            <div class="par">
+
+                                <span class="field">
+
+                                    <label>UID</label>
+                                    <input type="text" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')"  name="user_uid" class="input-medium" placeholder="请输入UID">
+
+                                    <label>玩家昵称</label>
+                                    <input type="text"  name="user_name" class="input-medium" placeholder="请输入名字">
+                                    <br />
+                                    <label>OpenID</label>
+                                    <input type="text" name="user_openid" class="input-medium" placeholder="请输入OpenID">
+                                    <br />
+                                    <label>游戏区服:</label>
+                                    <select id="server_id" name="server_id" class="uniformselect" value={{server_id}}>
+                                        {% for content in server_list %}
+                                            <option value="{{content.id}}" {% ifequal content.id server_id %}selected="selected"{% endifequal %}>
+                                                {{content.name}}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                </span>
+                                <span class="stdformbutton">
+                                    <button type="submit"  class="btn btn-primary">&nbsp; 提&nbsp;交&nbsp;</button>
+                                </span>
+                                <!--<button class="btn btn-primary">确定</button>-->
+                            </div>
+                        </form>
+                    </div><!--widgetcontent-->
+                </div><!--widget-->
+
+                <h4 class="widgettitle">玩家熔炼精华副本</h4>
+                <div id="dyntable_wrapper" class="dataTables_wrapper" role="grid">
+                    <form class="stdform" action="/Tyranitar6/data_edit/set_player_trial_essence_info/" method="post">
+
+                        <input type="hidden" name="server_id" value={{server_id}}>
+
+                    <table aria-describedby="dyntable_info" id="dyntable" class="table table-bordered responsive dataTable">
+                        <tbody aria-relevant="all" aria-live="polite" role="alert">
+                        <tr class="gradeX odd">
+                            <td style="width: 250px;"><span>UID</span></td><td class="user_uid">{{user_uid}}</td><td>   </td>
+                        </tr>
+                        <tr class="gradeX odd" style="background-color: #d0e9c6">
+                            <td>最新攻打时间</td>
+                            <td>敌人重置时间</td>
+                            <td>敌方数量</td>
+                            <td>敌方等级</td>
+                            <td>敌方个体值</td>
+                            <td>敌方星级</td>
+                            <td>敌方成员</td>
+                            <input type="hidden" class='url' value="{{url}}">
+                        </tr>
+                                <tr class="gradeX odd">
+{#                                    <td style=";background: #b3b3b3;">{{ each_item }}</td>#}
+{#                                    <td style="width: 250px;">{{row_value.name}}</td>#}
+                                    <td value="{{server_id}}##{{all_items_lst.0}}##最新攻打时间">{{all_items_lst.0}}</td>
+                                    <td value="{{server_id}}##{{all_items_lst.1}}##敌人重置时间">{{all_items_lst.1}}</td>
+                                    <td value="{{server_id}}##{{all_items_lst.2}}##敌方数量">{{all_items_lst.2}}</td>
+                                    <td value="{{server_id}}##{{all_items_lst.3}}##敌方等级">{{all_items_lst.3}}</td>
+                                    <td value="{{server_id}}##{{all_items_lst.4}}##敌方个体值">{{all_items_lst.4}}</td>
+                                    <td value="{{server_id}}##{{all_items_lst.5}}##敌方星级">{{all_items_lst.5}}</td>
+                                    <td value="{{server_id}}##{{all_items_lst.6}}##敌方成员">{{all_items_lst.6}}</td>
+                                </tr>
+                        </tbody>
+                    </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+{%endblock%}

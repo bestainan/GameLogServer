@@ -1,0 +1,104 @@
+{% extends "base/base.html" %}
+
+{%block right_panel%}
+        <div class="maincontent">
+            <div class="maincontentinner">
+
+                <div class="widget">
+                    <p>
+                        <b>最多只能发3种类型的奖励，客户端只显示3种</b>
+                    </p>
+                    <h4 class="widgettitle">增加系统邮件</h4>
+                    <div class="widgetcontent">
+                        <form class="stdform" action="/Tyranitar6/server/system_mail_update/" method="post">
+                            <div class="par">
+                                <p>
+                                    <label>编号(日期_编码 避免重复):</label>
+                                    <input type="text" name="version" placeholder="例如：20150729_01"  value="20150729_01" />
+                                </p>
+                                 <p>
+                                    <label>服务器ID:</label>
+                                    <textarea cols="1"  rows="1" name="server_id" >{{server_id}}</textarea>
+                                </p>
+                                <p>
+                                    <label>目标玩家uid:</label>
+                                    <input type="text" name="target_user_uid" placeholder="例如：1000004126" value={{target_user_uid}} />
+                                </p>
+                                <p>
+                                    <label>邮件内容:</label>
+                                    <textarea cols="1"  rows="1" name="title" >邮件内容</textarea>
+                                </p>
+                                <p>
+                                    <label>开始日期:</label>
+                                    <textarea cols="1"  rows="1" name="send_time" >{{send_time}}</textarea>
+                                    <!--<span class="field"><input style="cursor:pointer" readonly="true"  id="start_date_picker"  name="send_time"  class="input-small" type="text" ></span>-->
+                                </p>
+                                <p>
+                                    <label>有效日期:</label>
+                                    <textarea cols="1"  rows="1" name="indate" >{{indate}}</textarea>
+                                    <!--<span class="field"><input style="cursor:pointer" readonly="true"  id="end_date_picker"  name="indate"  class="input-small" type="text" ></span>-->
+                                </p>
+                                <p>
+                                    <label>金币:</label>
+                                    <input type="text" name="gold" value="0" />
+                                </p>
+
+                                <p>
+                                    <label>钻石:</label>
+                                    <input type="text" name="stone" value="0" />
+                                </p>
+                                <p>
+                                    <label>免费抽奖材料:</label>
+                                    <input type="text" name="free_draw_material" value="0" />
+                                </p>
+                                <p>
+                                    <label>物品:</label>
+                                    <select  name="item" class="uniformselect" >
+                                        {% for key,val in item_val%}
+                                             {% if val == "无" %}
+                                                <option value ={{key}} selected="selected">
+                                            {% else %}
+                                                <option value ={{key}} >
+                                            {% endif %}
+                                                    {{val}}
+                                                </option>
+                                        {% endfor %}
+                                    </select>
+                                </p>
+                                <p>
+                                    <label>物品数量(int):</label>
+                                    <input type="text" name="item_num" placeholder="请输入物品数量1" value="0" />
+                                </p>
+
+                                <p>
+                                    <label>宠物:</label>
+                                    <select  name="monster" class="uniformselect" >
+                                        {% for key,val in monster_val%}
+                                             {% if val == "无" %}
+                                                <option value ={{key}} selected="selected">
+                                            {% else %}
+                                                <option value ={{key}} >
+                                            {% endif %}
+                                                    {{val}}
+                                                </option>
+                                        {% endfor %}
+                                    </select>
+
+                                 <p>
+                                <p>
+                                    <label>星级(int):</label>
+                                    <input type="text" name="star" value="0" />
+                                </p>
+
+                                <span class="stdformbutton">
+                                    <button type="submit" class="btn btn-primary">&nbsp; 确&nbsp;认&nbsp;</button>
+                                </span>
+                                <!--<button class="btn btn-primary">确定</button>-->
+                            </div>
+                        </form>
+                    </div><!--widgetcontent-->
+                </div><!--widget-->
+
+            </div>
+        </div>
+{%endblock%}

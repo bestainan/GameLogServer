@@ -1,0 +1,124 @@
+{% extends "base/base.html" %}
+
+{%block right_panel%}
+
+        <div class="maincontent">
+            <div class="maincontentinner">
+
+                <div class="widget">
+
+                    <h4 class="widgettitle">用户信息</h4>
+                    <div class="widgetcontent">
+                        <form class="stdform" action="/Tyranitar6/data_edit/player_reward_seven_power_info/" method="post">
+                            <span style="font-size: large;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UID，帐号ID，玩家昵称，帐号 <span style="font-size: large; color: red; font-weight: 900">--3选1--</span></span>
+                            <div class="par">
+
+                                <span class="field">
+
+                                    <label>UID</label>
+                                    <input type="text" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')"  name="user_uid" class="input-medium" placeholder="请输入UID">
+
+                                    <label>玩家昵称</label>
+                                    <input type="text"  name="user_name" class="input-medium" placeholder="请输入名字">
+                                    <br />
+                                    <label>OpenID</label>
+                                    <input type="text" name="user_openid" class="input-medium" placeholder="请输入OpenID">
+                                    <br />
+                                    <label>游戏区服:</label>
+                                    <select id="server_id" name="server_id" class="uniformselect" value={{server_id}}>
+                                        {% for content in server_list %}
+                                            <option value="{{content.id}}" {% ifequal content.id server_id %}selected="selected"{% endifequal %}>
+                                                {{content.name}}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                </span>
+                                <span class="stdformbutton">
+                                    <button type="submit"  class="btn btn-primary">&nbsp; 提&nbsp;交&nbsp;</button>
+                                </span>
+                                <!--<button class="btn btn-primary">确定</button>-->
+                            </div>
+                        </form>
+                    </div><!--widgetcontent-->
+                </div><!--widget-->
+
+                <h4 class="widgettitle">玩家开服七天等级</h4>
+                <div id="dyntable_wrapper" class="dataTables_wrapper" role="grid">
+                    <form class="stdform" action="/Tyranitar6/data_edit/set_player_reward_seven_power_info/" method="post">
+                        <input type="hidden" name="server_id" value={{server_id}}>
+                        <table aria-describedby="dyntable_info" id="dyntable" class="table table-bordered responsive dataTable">
+                                <td>{{key}}</td>
+                                <tbody aria-relevant="all" aria-live="polite" role="alert">
+                                <tr class="gradeX odd">
+                                    <td style="width: 250px;"><span>UID</span></td><td class="user_uid">{{user_uid}}</td>
+                                </tr>
+                                <tr class="gradeX odd" style="background-color: #d0e9c6">
+                                    <td class="center" style="width: 250px;">奖励类别ID</td>
+                                    <td value="{{server_id}}##{{dic.id}}##奖励类别ID">{{dic.id}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="center" style="width: 250px;">玩家战力</td>
+                                    <td value="{{server_id}}##{{dic.teamPower}}##玩家等级">{{dic.teamPower}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="center" style="width: 250px;">金币获得</td>
+                                    <td value="{{server_id}}##{{dic.gold}}##金币获得">{{dic.gold}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="center" style="width: 250px;">钻石获得</td>
+                                    <td value="{{server_id}}##{{dic.stone}}##钻石获得">{{dic.stone}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="center" style="width: 250px;">宝贝球获得</td>
+                                    <td value="{{server_id}}##{{dic.pokeBall}}##宝贝球获得">{{dic.pokeBall}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="center" style="width: 250px;">经验值</td>
+                                    <td value="{{server_id}}##{{dic.experience}}##经验值">{{dic.experience}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="center" style="width: 250px;">装备获得</td>
+                                    <td value="{{server_id}}##{{dic.equipmentId}}##装备获得">{{dic.equipmentId}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="center" style="width: 250px;">宠物获得</td>
+                                    <td value="{{server_id}}##{{dic.monsterId}}##宠物获得">{{dic.monsterId}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="center" style="width: 250px;">宠物星级</td>
+                                    <td value="{{server_id}}##{{dic.monsterStar}}##宠物星级">{{dic.monsterStar}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="center" style="width: 250px;">物品1Id</td>
+                                    <td value="{{server_id}}##{{dic.item1}}##物品1Id">{{dic.item1}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="center" style="width: 250px;">数量</td>
+                                    <td value="{{server_id}}##{{dic.num1}}##数量">{{dic.num1}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="center" style="width: 250px;">物品2Id</td>
+                                    <td value="{{server_id}}##{{dic.item2}}##物品2Id">{{dic.item2}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="center" style="width: 250px;">数量</td>
+                                    <td value="{{server_id}}##{{dic.num2}}##数量">{{dic.num2}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="center" style="width: 250px;">物品3Id</td>
+                                    <td value="{{server_id}}##{{dic.item3}}##物品3Id">{{dic.item3}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="center" style="width: 250px;">数量</td>
+                                    <td value="{{server_id}}##{{dic.num3}}##数量">{{dic.num3}}</td>
+                                </tr>
+                                <tr>
+                                    <input type="hidden" class='url' value="{{url}}">
+                                </tr>
+                                </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+{%endblock%}

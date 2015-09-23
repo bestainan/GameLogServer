@@ -1,0 +1,120 @@
+{% extends "base/base.html" %}
+
+
+{%block right_panel%}
+
+        <div class="maincontent">
+            <div class="maincontentinner">
+
+                <div class="widget">
+
+                    <h4 class="widgettitle">用户信息</h4>
+                    <div class="widgetcontent">
+                        <form class="stdform" action="/Tyranitar6/data_edit/treasure_item_model/" method="post">
+                        <span style="font-size: large;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UID，帐号ID，玩家昵称，帐号 <span
+                                style="font-size: large; color: red; font-weight: 900">--3选1--</span></span>
+
+                        <div class="par">
+
+                                <span class="field">
+
+                                    <label>UID</label>
+                                    <input type="text"
+                                           id='user_id'
+                                           onkeyup="this.value=this.value.replace(/\D/g,'')"
+                                           onafterpaste="this.value=this.value.replace(/\D/g,'')"
+                                           name="user_uid"
+                                           class="input-medium"
+                                           placeholder="请输入UID"
+                                           value="{{ user_uid }}">
+
+                                    <label>玩家昵称</label>
+                                    <input type="text" value="{{ user_name }}" name="user_name" class="input-medium"
+                                           placeholder="请输入名字">
+                                    <br/>
+                                    <label>OpenID</label>
+                                    <input type="text" value="{{ user_openid }}" name="user_openid" class="input-medium"
+                                           placeholder="请输入OpenID">
+                                    <br/>
+                                    <label>游戏区服:</label>
+                                    <select id="server_id" name="server_id" class="uniformselect" value={{ server_id }}>
+                                        {% for content in server_list %}
+                                            <option value="{{ content.id }}"
+                                                    {% ifequal content.id server_id %}selected="selected"{% endifequal %}>
+                                                {{ content.name }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                </span>
+                                <span class="stdformbutton">
+                                    <button type="submit" class="btn btn-primary">&nbsp; 提&nbsp;交&nbsp;</button>
+                                </span>
+
+                            <!--<button class="btn btn-primary">确定</button>-->
+                        </div>
+                    </form>
+
+                    </div><!--widgetcontent-->
+                </div><!--widget-->
+            <!--增加物品 start-->
+            <h4 class="widgettitle">增加物品</h4>
+
+            <div class="widgetcontent">
+
+
+                <select data-placeholder="请选择宝石种类..." class="chzn-select" style="width:350px; padding-top:200px"
+                        tabindex="2" id="dl_chose">
+                    <option value=""></option>
+                    {% for key_id,value_name in item_dict_name.items %}
+                        <option>{{ key_id }} {{ value_name }}</option>
+                    {% endfor %}
+                </select>
+                <br/>
+                    <span class="stdformbutton">
+                        <button class="btn btn-primary just-post">&nbsp;提&nbsp;交&nbsp;</button>
+                    </span>
+
+
+            </div>
+            <!--增加物品 end-->
+                <h4 class="widgettitle">玩家宝物</h4>
+                <div id="dyntable_wrapper" class="dataTables_wrapper" role="grid">
+                     <form class="stdform" action="/Tyranitar6/data_edit/treasure_item_model/" method="post">
+                    <table aria-describedby="dyntable_info" id="dyntable" class="table table-bordered responsive dataTable">
+                        <tbody aria-relevant="all" aria-live="polite" role="alert">
+                        <tr class="gradeX odd">
+                            <td style="width: 250px;"><span>UID</span></td><td class="user_uid">{{user_uid}}</td><td>   </td>
+                        </tr>
+                        <tr class="gradeX odd" style="background-color: #d0e9c6">
+                            <td>宝石TID</td>
+                            <td>宝石UID</td>
+                            <td>宝石品质</td>
+                            <td>宝石等级</td>
+                            {#可以修改#}
+                            <td>宝石经验</td>
+                            <td>删除</td>
+                            <input type="hidden" name="server_id" value={{ server_id }}>
+                            <input type="hidden" class='function_name' value="{{ function_name }}">
+                            <input type="hidden" class="add_item_function_name" value="{{ add_item_function }}">
+                            <input type="hidden" class="del_item_function_name" value="{{ del_item_function }}">
+                        </tr>
+
+                            {% for row_dict in item_lst%}
+                                <tr class="gradeX odd">
+
+                                    <td>{{row_dict.tid}}</td>
+                                    <td>{{row_dict.uid}}</td>
+                                    <td>{{row_dict.phase}}</td>
+                                    <td>{{row_dict.level}}</td>
+                                    <td class="double_click" value="{{ server_id }}##{{ row_dict.tid }}##{{ row_dict.level_exp }}##经验" >{{row_dict.level_exp}}</td>
+                                    <td><a class="btn btn-circle del-post" value="{{ server_id }}##{{ row_dict.uid }}##{{ row_dict.level_exp }}##经验" ><i class="icon-trash"></i></a></td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                     </form>
+                </div>
+            </div>
+        </div>
+{%endblock%}
+

@@ -1,0 +1,54 @@
+{% extends "base/base.html" %}
+
+
+{%block right_panel%}
+
+<div class="maincontent" xmlns="http://www.w3.org/1999/html">
+    <div class="maincontent">
+            <div class="maincontentinner">
+
+            <div class="widget">
+            <h4 class="widgettitle">修改装备数据</h4>
+            <div class="widgetcontent">
+                <form class="stdform" action="/Tyranitar6/data_edit/equip_info_edit/" method="post">
+
+{#                        <input type="hidden" id="item_tid" name="user_uid" value="{{uid}}" />#}
+                        <input type="hidden" id="user_openid" name="user_openid" value="{{user_openid}}" />
+                        <input type="hidden" id="server_id" name="server_id" value="{{server_id}}" />
+                        <input type="hidden" id="user_uid" name="user_uid" value="{{user_uid}}" />
+                        <input type="hidden" id="user_name" name="user_name" value="{{user_name}}" />
+                        {# 把将要编辑的值传给 index #}
+                        <input type="hidden" id="old_edit_data" name="old_edit_data" value="{{old_edit_data}}" />
+                        <input type="hidden" id="add_data" name="add_data" value="{{add_data}}" />
+
+                        <table cellpadding="5" cellspacing="0" >
+                            <tr>
+                                <td align="left">装备名</td>
+                                <td align="left">
+                                    <select id="will_edit_tid_id" name="will_edit_tid">
+                                        {% for content in item_tid_name_lst %}
+                                            <option name='{{ content.tid }}' value="{{content.tid}}"
+                                                    {% ifequal content.tid will_edit_tid %}selected='selected'{% endifequal %}>
+                                                {{content.name}}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">装备等级</td>
+                                    <td align="left">
+                                        <input type="text" name="will_edit_tid_level" class="input-medium" placeholder={{ will_edit_tid_level }}>
+                                    </td>
+                            </tr>
+                        </table>
+                    <span class="stdformbutton">
+                        <button type="submit" class="btn btn-primary">&nbsp; 提&nbsp;交&nbsp;</button>
+                    </span>
+                </form>
+            </div>
+            </div>
+            </div>
+    </div>
+</div>
+{%endblock%}

@@ -1,0 +1,32 @@
+{% extends "base/base.html" %}
+
+{%block right_panel%}
+        <div class="maincontent">
+            <div class="maincontentinner">
+
+                <div class="widget">
+                    <h4 class="widgettitle">编辑版本公告</h4>
+                    <div class="widgetcontent">
+                        <form class="stdform" action="/Tyranitar6/server/version_notice_update/" method="post">
+                            <div class="par">
+                                <p>
+                                    <label>版本号:</label>
+                                    <input type="text" name="version" value={{server_notice.version}} readOnly="true" />
+                                </p>
+
+                                <p>
+                                    <label>公告内容:</label>
+                                    <textarea cols="100"  rows="10" name="notice" >{{server_notice.notice}}</textarea>
+                                </p>
+
+                                <span class="stdformbutton">
+                                    <button type="submit" class="btn btn-primary">&nbsp; 确&nbsp;认&nbsp;</button>
+                                </span>
+                            </div>
+                        </form>
+                    </div><!--widgetcontent-->
+                </div><!--widget-->
+
+            </div>
+        </div>
+{%endblock%}

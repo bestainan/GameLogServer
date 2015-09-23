@@ -1,0 +1,35 @@
+{% extends "base/base.html" %}
+
+
+{%block right_panel%}
+
+<div class="maincontent" xmlns="http://www.w3.org/1999/html">
+    <div class="maincontent">
+            <div class="maincontentinner">
+
+            <div class="widget">
+            <h4 class="widgettitle">删除装备</h4>
+            <div class="widgetcontent">
+
+                <form class="stdform" action="/Tyranitar6/data_edit/equip_info_edit/" method="post">
+                    <input type="hidden" id="user_openid" name="user_openid" value="{{user_openid}}" />
+                    <input type="hidden" id="server_id" name="server_id" value="{{server_id}}" />
+                    <input type="hidden" id="user_uid" name="user_uid" value="{{user_uid}}" />
+                    <input type="hidden" id="user_name" name="user_name" value="{{user_name}}" />
+                    <input type="hidden" id="delete_data" name="delete_data" value="{{delete_data}}" />
+                    <p style="font-size: 14px">
+                        是否删除当前装备？
+                    </p>
+                    <p>
+                        {{confirm_str}}
+                    </p>
+                    <p>
+                        <input type="submit" value="确认" style="width:50px;height:30px;background:#0866c6;color: white" />&nbsp;<input type="button" value="取消" style="width:50px;height:30px;background:#0866c6;color: white" onclick="history.back()" />
+                    </p>
+                </form>
+            </div>
+            </div>
+            </div>
+    </div>
+</div>
+{%endblock%}

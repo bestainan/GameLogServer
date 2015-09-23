@@ -1,0 +1,90 @@
+{% extends "base/base.html" %}
+
+{%block right_panel%}
+<div class="maincontent">
+        <div class="maincontentinner">
+
+            <div class="widget">
+                <h4 class="widgettitle">用户信息</h4>
+                <div class="widgetcontent">
+                    <form class="stdform" action="/Tyranitar6/data_edit/player_activity_gym/" method="post">
+                        <span style="font-size: large;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UID，帐号ID，玩家昵称，帐号 <span style="font-size: large; color: red; font-weight: 900">--3选1--</span></span>
+                        <div class="par">
+
+                            <span class="field">
+
+                                <label>UID</label>
+                                <input type="text" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')"  placeholder="{{ return_uid }}" name="user_uid" class="input-medium" >
+
+                                <label>玩家昵称</label>
+                                <input type="text"  name="user_name" class="input-medium" placeholder="{{ return_name }}">
+                                <br />
+                                <label>OpenID</label>
+                                <input type="text" name="user_openid" class="input-medium" placeholder="{{ return_openid }}">
+                                <br />
+                                <label>游戏区服:</label>
+                                <select id="server_id" name="server_id" class="uniformselect" value={{server_id}}>
+                                    {% for content in server_list %}
+                                        <option value="{{content.id}}" {% ifequal content.id server_id %} selected="selected" {% endifequal %}>
+                                        {{content.name}}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                            </span>
+                            <span class="stdformbutton">
+                                <button type="submit"  class="btn btn-primary">&nbsp; 提&nbsp;交&nbsp;</button>
+                            </span>
+                            <!--<button class="btn btn-primary">确定</button>-->
+                        </div>
+                    </form>
+                </div><!--widgetcontent-->
+            </div><!--widget-->
+
+            {#          传值             #}
+            <a style=" visibility: hidden;" class="user_uid" >{{user_uid}}</a>
+            <input type="hidden" name="server_id" value={{server_id}}>
+            <input type="hidden" class='function_name' value="{{function_name}}">
+            {#       以上名字方式不能变         #}
+
+
+            <h4 class="widgettitle" >运营活动道馆</h4>
+            <div id="dyntable_wrapper" class="dataTables_wrapper" role="grid">
+                <table aria-describedby="dyntable_info" id="dyntable" class="table table-bordered responsive dataTable">
+                    <colgroup>
+                        <col class="con1" style="text-align: right; width: 5%; background:#b3b3b3;">
+                        <col class="con0" style="text-align: right; width: 5%; background:#d9edf7;">
+                        <col class="con1" style="text-align: right; width: 5%; background:#d9edf7;">
+                        <col class="con0" style="text-align: right; width: 5%; background:#d9edf7;">
+                    </colgroup>
+                    <thead>
+
+                        <tr role="row">{# 表头 #}
+                            {% for head in head_lst %}
+                                <th colspan="1" rowspan="1" aria-controls="dyntable" tabindex="0" role="columnheader" class="head{{forloop.counter0}} sorting">{{ head.name }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    {# -----------------------------------不可改元素--------------------------------------#}
+                    {# [[[0,1],[0,1]],[[0,1],[0,1]]] #}
+                    {% for each_item in all_immutable_lst %}
+                        {% for row in each_item %}
+                            <tr class="gradeX odd">
+                                {% for column in row %}
+                                    <td style="background:#b3b3b3;">{{column}}</td>
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    {% endfor %}
+                    {# -------------------------------------可改元素--------------------------------------#}
+                    {# {key1:{'name':X,'num':X},key2:{'name':X,'num':X}} #}
+                    {% for key, each_dict in row_dict.items %}
+                                <tr class="gradeX odd">
+                                    <td>{{each_dict.name}}</td>
+                                    <td onmousemove="overColor2(this)" onmouseout="outColor1(this)" class="double_click" value="{{server_id}}##{{key}}##{{each_dict.num}}##数量(注:修改时要注意’运营活动奖励结束时间’‘有’且‘正确’)">{{each_dict.num}}</td>
+                                </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+{%endblock%}

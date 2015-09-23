@@ -1,0 +1,76 @@
+{% extends "base/base.html" %}
+
+{%block right_panel%}
+        <div class="maincontent">
+            <div class="maincontentinner">
+
+                <div class="widget">
+                    <h4 class="widgettitle">编辑服务器</h4>
+                    <div class="widgetcontent">
+                        <form class="stdform" action="/Tyranitar6/server/server_update/" method="post">
+                            <div class="par">
+                                <p>
+                                    <label>服务器ID:</label>
+                                    <input type="text" name="server_id"  value={{server.id}} readOnly="true" />
+                                </p>
+                                <p>
+                                    <label>URL:</label>
+                                    <input type="text" name="url" value={{server.url}} />
+                                </p>
+
+                                <p>
+                                    <label>服务器名:</label>
+                                    <textarea cols="100"  rows="10" name="name" >{{server.name}}</textarea>
+                                </p>
+                                <label>服务器状态:</label>
+                                <!-- -->
+                                <select  name="server_state" class="uniformselect" >
+                                                {% for key,val in server_state_val%}
+                                                    {% if server.state == key %}
+                                                        <option value ={{server.state}} selected="selected">
+                                                    {% else %}
+                                                        <option value ={{key}} >
+                                                    {% endif %}
+                                                            {{val}}
+                                                        </option>
+                                                {% endfor %}
+                                </select>
+
+                                <p>
+                                    <label>版本号:</label>
+                                    <input type="text" name="version" value={{server.version}} />
+                                </p>
+                                <p>
+                                    <label>开服时间:</label>
+                                    <span class="field"><input style="cursor:pointer" readonly="true" id="start_date_picker"  name="open_server_time" value={{server.open_server_time}} class="input-small" type="text" ></span>
+                                </p>
+
+                                <p>
+                                    <label>客户端隐藏:</label>
+                                    <select  name="server_hidden" class="uniformselect" >
+                                                {% for key,val in server_hidden_val%}
+                                                    {% if server.hidden == key %}
+                                                        <option value ={{server.hidden}} selected="selected">
+                                                    {% else %}
+                                                        <option value ={{key}} >
+                                                    {% endif %}
+                                                            {{val}}
+                                                        </option>
+                                                {% endfor %}
+                                    </select>
+                                </p>
+                             <!--<p>-->
+                                <!--<button type="submit" class="btn btn-primary">确认</button>-->
+                            <!--</p>-->
+                                <span class="stdformbutton">
+                                    <button type="submit" class="btn btn-primary">&nbsp; 确&nbsp;认&nbsp;</button>
+                                </span>
+                                <!--<button class="btn btn-primary">确定</button>-->
+                            </div>
+                        </form>
+                    </div><!--widgetcontent-->
+                </div><!--widget-->
+
+            </div>
+        </div>
+{%endblock%}

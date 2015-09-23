@@ -1,0 +1,74 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>我爱皮卡丘管理平台</title>
+<link rel="stylesheet" href="{% static 'css/style.default.css'%}"  type="text/css" />
+<!--<link rel="stylesheet" href="{% static 'css/style.shinyblue.css'%}"  type="text/css" />-->
+
+<script type="text/javascript" src="{% static 'js/jquery-1.9.1.min.js'%}"></script>
+<script type="text/javascript" src="{% static 'js/jquery-migrate-1.1.1.min.js'%}" ></script>
+<script type="text/javascript" src="{% static 'js/jquery-ui-1.9.2.min.js'%}" ></script>
+<script type="text/javascript" src="{% static 'js/modernizr.min.js'%}" ></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.min.js'%}" ></script>
+<script type="text/javascript" src="{% static 'js/jquery.cookie.js'%}" ></script>
+<script type="text/javascript" src="{% static 'js/custom.js'%}" ></script>
+
+</head>
+
+<body class="loginpage">
+
+<div class="loginpanel">
+    <div class="loginpanelinner">
+        <div class="logo animate0 bounceIn"><img src="{% static 'images/logo.png' %}" alt="" /></div>
+        <form id="login" action="/Tyranitar6/login/" method="post">
+            <div class="inputwrapper">
+                {% if status == 1 %}
+                    <div class="alert alert-error">
+                        帐号不存在，请重新输入
+                    </div>
+                {% endif %}
+                {% if status == 2 %}
+                    <div class="alert alert-error">
+                        帐号不存在，请重新输入
+                    </div>
+                {% endif %}
+                {% if status == 3 %}
+                    <div class="alert alert-error">
+                        用户名或者密码错误
+                    </div>
+                {% endif %}
+                {% if status == 4 %}
+                    <div class="alert alert-error">
+                        该账号已经被删除
+                    </div>
+                {% endif %}
+            </div>
+            <div class="inputwrapper">
+                <input type="text" name="account" id="account" placeholder="请输入用户名" />
+            </div>
+            <div class="inputwrapper">
+                <input type="password" name="password" id="password" placeholder="请输入密码" />
+            </div>
+            <div class="inputwrapper">
+                <button name="submit">登录</button>
+            </div>
+            <!--
+            <div class="inputwrapper animate4 bounceIn">
+                <label><input type="checkbox" class="remember" name="signin" /> Keep me sign in</label>
+            </div>
+            -->
+            
+        </form>
+    </div><!--loginpanelinner-->
+</div><!--loginpanel-->
+
+<div class="loginfooter">
+    <p>&copy; 2013. Shamcey Admin Template. All Rights Reserved.</p>
+</div>
+
+</body>
+</html>

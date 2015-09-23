@@ -1,0 +1,87 @@
+{% extends "base/base.html" %}
+
+{%block right_panel%}
+
+        <div class="maincontent">
+            <div class="maincontentinner">
+
+                <div class="widget">
+
+                    <h4 class="widgettitle">用户信息</h4>
+                    <div class="widgetcontent">
+                        <form class="stdform" action="/Tyranitar6/data_edit/zone_info_edit/" method="post">
+                            <span style="font-size: large;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UID，帐号ID，玩家昵称，帐号 <span style="font-size: large; color: red; font-weight: 900">--3选1--</span></span>
+                            <div class="par">
+
+                                <span class="field">
+
+                                    <label>UID</label>
+                                    <input type="text" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')"  name="user_uid" class="input-medium" placeholder="请输入UID">
+
+                                    <label>玩家昵称</label>
+                                    <input type="text"  name="user_name" class="input-medium" placeholder="请输入名字">
+                                    <br />
+                                    <label>OpenID</label>
+                                    <input type="text" name="user_openid" class="input-medium" placeholder="请输入OpenID">
+                                    <br />
+                                    <label>游戏区服:</label>
+                                    <select id="server_id" name="server_id" class="uniformselect" value={{server_id}}>
+                                        {% for content in server_list %}
+                                            <option value="{{content.id}}" {% ifequal content.id server_id %}selected="selected"{% endifequal %}>
+                                                {{content.name}}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                </span>
+                                <span class="stdformbutton">
+                                    <button type="submit"  class="btn btn-primary">&nbsp; 提&nbsp;交&nbsp;</button>
+                                </span>
+                                <!--<button class="btn btn-primary">确定</button>-->
+                            </div>
+                        </form>
+                    </div><!--widgetcontent-->
+                </div><!--widget-->
+
+                <h4 class="widgettitle">玩家区域查询</h4>
+                <div id="dyntable_wrapper" class="dataTables_wrapper" role="grid">
+                    <form class="stdform" action="/Tyranitar6/data_edit/set_zone_info_edit/" method="post">
+
+                        <input type="hidden"name="server_id" value={{server_id}}>
+
+                    <table aria-describedby="dyntable_info" id="dyntable" class="table table-bordered responsive dataTable">
+                        <tbody aria-relevant="all" aria-live="polite" role="alert">
+                        <tr class="gradeX odd">
+                            <td style="width: 250px;"><span>UID</span></td><td class="user_uid">{{user_uid}}</td><td>   </td>
+                        </tr>
+                        <tr class="gradeX odd" style="background-color: #d0e9c6">
+                            <td style="width: 250px;"><span>区域</span></td>
+                            <td>普通副本通关奖励</td>
+                            <td>普通副本金冠奖励</td>
+                            <td>困难副本通关奖励</td>
+                            <td>困难副本金冠奖励</td>
+                            <td>普通副本金冠通关情况</td>
+                            <td>困难副本金冠通关情况</td>
+                            <input type="hidden" class='url' value="{{url}}">
+                        </tr>
+                            {% for row_key,row_value in row_dict.items %}
+                                <tr class="gradeX odd">
+                                    <td style="width: 250px;">{{row_value.name}}</td>
+                                    <td value="{{server_id}}##{{row_key}}##{{row_value.normal_pass_reward}}##一般副本通过奖励">{{row_value.normal_pass_reward}}</td>
+                                    <td value="{{server_id}}##{{row_key}}##{{row_value.normal_gold_crown_reward}}##一般副本金冠奖励">{{row_value.normal_gold_crown_reward}}</td>
+                                    <td value="{{server_id}}##{{row_key}}##{{row_value.hard_pass_reward}}##困难副本通过奖励">{{row_value.hard_pass_reward}}</td>
+                                    <td value="{{server_id}}##{{row_key}}##{{row_value.hard_gold_crown_reward}}##困难副本金冠奖励">{{row_value.hard_gold_crown_reward}}</td>
+                                    <td value="{{server_id}}##{{row_key}}##{{row_value.normal_rank}}##一般副本通关情况">{{row_value.normal_rank}}</td>
+                                    <td value="{{server_id}}##{{row_key}}##{{row_value.hero_rank}}##困难副本通关情况">{{row_value.hero_rank}}</td>
+                                    <!--<input type="hidden" name={{row_key}} value='{{row_value.value}}'>-->
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                        <!--<span class="stdformbutton" style="visibility:{{type_hidden}}">-->
+                            <!--<button type="hidded" style="margin-left: 117px; "   class="btn btn-primary">&nbsp; 提&nbsp;交&nbsp;</button>-->
+                        <!--</span>-->
+                    </form>
+                </div>
+            </div>
+        </div>
+{%endblock%}

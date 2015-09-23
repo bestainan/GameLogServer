@@ -1,0 +1,33 @@
+{% extends "base/base.html" %}
+
+{%block right_panel%}
+        <div class="maincontent">
+            <div class="maincontentinner">
+
+                <div class="widget">
+                    <h4 class="widgettitle">添加版本公告</h4>
+                    <div class="widgetcontent">
+                        <form class="stdform" action="/Tyranitar6/server/version_notice_update/" method="post">
+                            <div class="par">
+                                <p>
+                                    <label>版本号:</label>
+                                    <input type="text" name="version" placeholder="请输入版本号" value="1.6.0705"/>
+                                </p>
+                                 <p>
+                                    <label>公告内容:</label>
+                                    <textarea cols="100"  rows="10" name="notice" >官方贴吧：我爱小精灵 官方Q群：305698617 官方微信：pikaqiu_52</textarea>
+
+                                </p>
+
+                                <span class="stdformbutton">
+                                    <button type="submit" class="btn btn-primary">&nbsp; 确&nbsp;认&nbsp;</button>
+                                </span>
+                                <!--<button class="btn btn-primary">确定</button>-->
+                            </div>
+                        </form>
+                    </div><!--widgetcontent-->
+                </div><!--widget-->
+
+            </div>
+        </div>
+{%endblock%}

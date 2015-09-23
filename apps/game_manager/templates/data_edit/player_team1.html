@@ -1,0 +1,113 @@
+{% extends "base/base.html" %}
+
+{%block right_panel%}
+<div class="maincontent">
+        <div class="maincontentinner">
+
+            <div class="widget">
+                <h4 class="widgettitle">用户信息</h4>
+                <div class="widgetcontent">
+                    <form class="stdform" action="/Tyranitar6/data_edit/player_team/" method="post">
+                        <span style="font-size: large;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UID，帐号ID，玩家昵称，帐号 <span style="font-size: large; color: red; font-weight: 900">--3选1--</span></span>
+                        <div class="par">
+
+                            <span class="field">
+
+                                <label>UID</label>
+                                <input type="text" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')"  placeholder="{{ return_uid }}" name="user_uid" class="input-medium" >
+
+                                <label>玩家昵称</label>
+                                <input type="text"  name="user_name" class="input-medium" placeholder="{{ return_name }}">
+                                <br />
+                                <label>OpenID</label>
+                                <input type="text" name="user_openid" class="input-medium" placeholder="{{ return_openid }}">
+                                <br />
+                                <label>游戏区服:</label>
+                                <select id="server_id" name="server_id" class="uniformselect" value={{server_id}}>
+                                    {% for content in server_list %}
+                                        <option value="{{content.id}}" {% ifequal content.id server_id %} selected="selected" {% endifequal %}>
+                                        {{content.name}}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                            </span>
+                            <span class="stdformbutton">
+                                <button type="submit"  class="btn btn-primary">&nbsp; 提&nbsp;交&nbsp;</button>
+                            </span>
+                            <!--<button class="btn btn-primary">确定</button>-->
+                        </div>
+                    </form>
+                </div><!--widgetcontent-->
+            </div><!--widget-->
+
+            {#          传值             #}
+            <a style=" visibility: hidden;" class="user_uid" >{{user_uid}}</a>
+            <input type="hidden" name="server_id" value={{server_id}}>
+            <input type="hidden" class='function_name' value="{{function_name}}">
+            {#       以上名字方式不能变         #}
+
+
+            <h4 class="widgettitle" >玩家队伍</h4>
+            <div id="dyntable_wrapper" class="dataTables_wrapper" role="grid">
+                <table aria-describedby="dyntable_info" id="dyntable" class="table table-bordered responsive dataTable">
+                    <colgroup>
+                        <col class="con1" style="text-align: right; width: 5%; background:#b3b3b3;">
+                        <col class="con0" style="text-align: right; width: 5%; background:#d9edf7;">
+                        <col class="con1" style="text-align: right; width: 5%; background:#d9edf7;">
+                        <col class="con0" style="text-align: right; width: 5%; background:#d9edf7;">
+                        <col class="con0" style="text-align: right; width: 5%; background:#d9edf7;">
+                        <col class="con0" style="text-align: right; width: 5%; background:#d9edf7;">
+                        <col class="con0" style="text-align: right; width: 5%; background:#d9edf7;">
+                        <col class="con0" style="text-align: right; width: 5%; background:#d9edf7;">
+                        <col class="con0" style="text-align: right; width: 5%; background:#d9edf7;">
+                    </colgroup>
+                    <thead>
+
+                        <tr role="row">{# 表头 #}
+                            {% for head in head_lst %}
+                                <th colspan="1" rowspan="1" aria-controls="dyntable" tabindex="0" role="columnheader" class="head{{forloop.counter0}} sorting">{{ head.name }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                   <tbody aria-relevant="all" aria-live="polite" role="alert">{# 表结构 #}
+                        {% for row_key,row_value in row_dict.items %}
+
+                            <tr class="gradeX odd">
+                                <td>{{row_value.name}}</td>
+                                <td onmousemove="overColor2(this)" onmouseout="outColor1(this)" class="double_click" value="{{server_id}}##{{row_key}}$$team_monsters$$-1##{{row_value.monsters}}##宠物">{{row_value.monsters}}</td>
+                                <td onmousemove="overColor2(this)" onmouseout="outColor1(this)" class="double_click" value="{{server_id}}##{{row_key}}$$team_equips$$0##{{row_value.equips_1}}##装备1">{{row_value.equips_1}}</td>
+                                <td onmousemove="overColor2(this)" onmouseout="outColor1(this)" class="double_click" value="{{server_id}}##{{row_key}}$$team_equips$$1##{{row_value.equips_2}}##装备2">{{row_value.equips_2}}</td>
+                                <td onmousemove="overColor2(this)" onmouseout="outColor1(this)" class="double_click" value="{{server_id}}##{{row_key}}$$team_equips$$2##{{row_value.equips_3}}##装备3">{{row_value.equips_3}}</td>
+                                <td onmousemove="overColor2(this)" onmouseout="outColor1(this)" class="double_click" value="{{server_id}}##{{row_key}}$$team_equips$$3##{{row_value.equips_4}}##装备4">{{row_value.equips_4}}</td>
+                                <td onmousemove="overColor2(this)" onmouseout="outColor1(this)" class="double_click" value="{{server_id}}##{{row_key}}$$team_equips$$4##{{row_value.equips_5}}##装备5">{{row_value.equips_5}}
+                                                     <select id="server_id" name="server_id" class="uniformselect" value={{server_id}}>
+                                    {% for content in server_list %}
+                                        <option value="{{content.id}}" {% ifequal content.id server_id %} selected="selected" {% endifequal %}>
+                                        {{content.name}}
+                                        </option>
+                                    {% endfor %}
+                                </select></td>
+                                <td onmousemove="overColor2(this)" onmouseout="outColor1(this)" class="double_click" value="{{server_id}}##{{row_key}}$$team_treasure_2$$0##{{row_value.treasures_1}}##宝石1">{{row_value.treasures_1}}</td>
+                                <td onmousemove="overColor2(this)" onmouseout="outColor1(this)" class="double_click" value="{{server_id}}##{{row_key}}$$team_treasure_2$$1##{{row_value.treasures_2}}##宝石2">
+                                    <select data-placeholder="请选择..." class="chzn-select" tabindex="2" id="dl_chose">
+                                    <option value="1"></option>
+                                    {% for key_id,value_name in item_dict_name.items %}
+                                        <option>{{ key_id }} {{ value_name }}</option>
+                                    {% endfor %}
+                                    </select>
+                                    {{row_value.treasures_2}}</td>
+
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                {#           增加物品#}
+
+
+
+
+                {#           增加物品#}
+                </table>
+            </div>
+        </div>
+    </div>
+{%endblock%}

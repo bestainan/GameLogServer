@@ -1,0 +1,53 @@
+{% extends "base/base.html" %}
+
+{%block right_panel%}
+        <div class="maincontent">
+            <div class="maincontentinner">
+
+                <div class="widget">
+                    <h4 class="widgettitle">添加广播</h4>
+                    <div class="widgetcontent">
+                        <form class="stdform" action="/Tyranitar6/server/notice_update/" method="post">
+                            <div class="par">
+                                <p>
+                                    <label>广播UID(版本号):</label>
+                                    <input type="text" name="uid" placeholder="例如：20150729_01" value="20150729_01" />
+                                </p>
+                                <p>
+                                    <label>服务器ID:</label>
+                                    <textarea cols="1"  rows="1" name="server_id" >10001</textarea>
+                                </p>
+                                <p>
+                                    <label>开始时间:</label>
+                                    <input type="text" name="start_time" placeholder="例如：2015-01-28 18:10:12" value="2015-01-28 18:10:12" />
+
+                                    <!--<textarea cols="1"  rows="1" name="start_time" ></textarea>-->
+                                    <!--<span class="field"><input style="cursor:pointer" readonly="true"  id="start_date_picker"  name="start_time"  class="input-small" type="text" ></span>-->
+                                </p>
+                                <p>
+                                    <label>结束时间:</label>
+                                    <input type="text" name="end_time" placeholder="例如：2015-01-28 18:10:12" value="2015-01-29 18:10:12" />
+                                    <!--<textarea cols="1"  rows="1" name="end_time" ></textarea>-->
+                                    <!--<span class="field"><input style="cursor:pointer" readonly="true"  id="end_date_picker"  name="end_time"  class="input-small" type="text" ></span>-->
+                                </p>
+                                <p>
+                                    <label>广播内容:</label>
+                                    <textarea cols="100"  rows="10" name="content" >广播内容</textarea>
+                                </p>
+                                <p>
+                                    <label>时间间隔(分钟):</label>
+                                    <input type="text" name="distance_time" placeholder="时间间隔(分钟)" value="1"/>
+                                </p>
+
+                                <span class="stdformbutton">
+                                    <button type="submit" class="btn btn-primary">&nbsp; 确&nbsp;认&nbsp;</button>
+                                </span>
+                                <!--<button class="btn btn-primary">确定</button>-->
+                            </div>
+                        </form>
+                    </div><!--widgetcontent-->
+                </div><!--widget-->
+
+            </div>
+        </div>
+{%endblock%}

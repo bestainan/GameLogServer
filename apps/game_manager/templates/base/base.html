@@ -1,0 +1,500 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>我爱皮卡丘管理平台</title>
+
+<link rel="stylesheet" href="{% static 'css/style.default.css'%}"  type="text/css" />
+<link rel="stylesheet" href="{% static 'css/bootstrap-fileupload.min.css'%}"  type="text/css" />
+<link rel="stylesheet" href="{% static 'css/bootstrap-timepicker.min.css'%}"  type="text/css" />
+<link rel="stylesheet" href="{% static 'css/responsive-tables.css'%}"  type="text/css" />
+
+
+<script type="text/javascript" src="{% static 'js/jquery-1.9.1.min.js'%}" tppabs="http://themepixels.com/main/themes/demo/webpage/shamcey/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="{% static 'js/jquery-migrate-1.1.1.min.js'%}" tppabs="http://themepixels.com/main/themes/demo/webpage/shamcey/js/jquery-migrate-1.1.1.min.js"></script>
+<script type="text/javascript" src="{% static 'js/jquery-ui-1.9.2.min.js'%}" tppabs="http://themepixels.com/main/themes/demo/webpage/shamcey/js/jquery-ui-1.9.2.min.js"></script>
+<script type="text/javascript" src="{% static 'prettify/prettify.js'%}" tppabs="http://themepixels.com/main/themes/demo/webpage/shamcey/prettify/prettify.js"></script>
+<script type="text/javascript" src="{% static 'js/modernizr.min.js'%}" tppabs="http://themepixels.com/main/themes/demo/webpage/shamcey/js/modernizr.min.js"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.min.js'%}" tppabs="http://themepixels.com/main/themes/demo/webpage/shamcey/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{% static 'js/jquery.jgrowl.js'%}" tppabs="http://themepixels.com/main/themes/demo/webpage/shamcey/js/jquery.jgrowl.js"></script>
+<script type="text/javascript" src="{% static 'js/jquery.cookie.js'%}" tppabs="http://themepixels.com/main/themes/demo/webpage/shamcey/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="{% static 'js/custom.js'%}" tppabs="http://themepixels.com/main/themes/demo/webpage/shamcey/js/custom.js"></script>
+
+
+<script type="text/javascript" src="{% static 'js/bootstrap-fileupload.min.js'%}" tppabs="http://themepixels.com/main/themes/demo/webpage/shamcey/js/custom.js"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap-timepicker.min.js'%}" tppabs="http://themepixels.com/main/themes/demo/webpage/shamcey/js/custom.js"></script>
+<script type="text/javascript" src="{% static 'js/jquery.uniform.min.js'%}" tppabs="http://themepixels.com/main/themes/demo/webpage/shamcey/js/custom.js"></script>
+<script type="text/javascript" src="{% static 'js/jquery.validate.min.js'%}" tppabs="http://themepixels.com/main/themes/demo/webpage/shamcey/js/custom.js"></script>
+<script type="text/javascript" src="{% static 'js/jquery.tagsinput.min.js'%}" tppabs="http://themepixels.com/main/themes/demo/webpage/shamcey/js/custom.js"></script>
+<script type="text/javascript" src="{% static 'js/jquery.autogrow-textarea.js'%}" tppabs="http://themepixels.com/main/themes/demo/webpage/shamcey/js/custom.js"></script>
+<script type="text/javascript" src="{% static 'js/charCount.js'%}" tppabs="http://themepixels.com/main/themes/demo/webpage/shamcey/js/custom.js"></script>
+<script type="text/javascript" src="{% static 'js/colorpicker.js'%}" tppabs="http://themepixels.com/main/themes/demo/webpage/shamcey/js/custom.js"></script>
+<script type="text/javascript" src="{% static 'js/ui.spinner.min.js'%}" tppabs="http://themepixels.com/main/themes/demo/webpage/shamcey/js/custom.js"></script>
+<script type="text/javascript" src="{% static 'js/chosen.jquery.min.js'%}" tppabs="http://themepixels.com/main/themes/demo/webpage/shamcey/js/custom.js"></script>
+<script type="text/javascript" src="{% static 'js/forms.js'%}" tppabs="http://themepixels.com/main/themes/demo/webpage/shamcey/js/custom.js"></script>
+
+<!--表格部分-->
+<script type="text/javascript" src="{% static 'js/jquery.dataTables.min.js'%}" tppabs="http://themepixels.com/main/themes/demo/webpage/shamcey/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="{% static 'js/responsive-tables.js'%}" tppabs="http://themepixels.com/main/themes/demo/webpage/shamcey/js/responsive-tables.js"></script>
+<script type="text/javascript" src="{% static 'js/jquery.alerts.js'%}" tppabs="http://themepixels.com/main/themes/demo/webpage/shamcey/js/jquery.alerts.js"></script>
+<script type="text/javascript" src="{% static 'js/elements.js'%}" tppabs="http://themepixels.com/main/themes/demo/webpage/shamcey/js/elements.js"></script>
+
+    <script type="text/javascript">
+    jQuery(document).ready(function(){
+        // dynamic table
+        jQuery('#dyntable').dataTable({
+            "sPaginationType": "full_numbers",
+            "aaSortingFixed": [[0,'asc']],
+            "fnDrawCallback": function(oSettings) {
+                jQuery.uniform.update();
+            }
+        });
+
+        jQuery('#dyntable2').dataTable( {
+            "bScrollInfinite": true,
+            "bScrollCollapse": true,
+            "sScrollY": "300px"
+        });
+
+    });
+</script>
+
+<script>{# 改变表格颜色 #}
+    function overColor1(x)
+    {
+    x.style.background="#b3b3b3";
+    }
+    function overColor2(x)
+    {
+    x.style.background="#FFFF99";
+    }
+
+    function outColor1(x)
+    {
+    x.style.background="#d9edf7";
+    }
+
+    function outColor2(x)
+    {
+    x.style.background="#EEEEEE";
+    }
+</script>
+{%block script%}
+{%endblock%}
+
+<style>
+.button_one_line {display:inline-block};
+#dl_chose_chzn { margin-top: 1000px}
+</style>
+</head>
+
+<body>
+    <div class="mainwrapper">
+
+    <div class="header">
+        <div class="logo">
+            <img src="{% static 'images/logo.png'%}"  alt="" />
+        </div>
+        <div class="headerinner">
+            <ul class="headmenu">
+                <li class="right">
+                    <div class="userloggedinfo">
+                        <div class="userinfo">
+                            <h4>当前管理员帐号 ：<strong>{{account}}</strong></h4>
+                            <h4>当前管理员权限 ：<strong>{{permissions}}</strong></h4>
+
+                            <ul>
+                                <li><a href="/Tyranitar6/updata_password/">修改密码</a></li>
+                                <li><a href="/Tyranitar6/login/" >登出</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul><!--headmenu-->
+        </div>
+    </div>
+
+    <div class="leftpanel">
+        <div class="leftmenu">
+            <ul class="nav nav-tabs nav-stacked">
+                {%block left_panel%}
+                {% if 'btn_super' in btn_lst %}
+                    <li class="dropdown {%if game_log%}active{%endif%}" ><a href=""><span class="iconfa-laptop"></span>超级管理员</a>
+                        <ul>
+                            <li class="" ><a href="/Tyranitar6/super_man/select_account/">帐号查询</a></li>
+                        </ul>
+                    </li>
+                {% endif %}
+                {% if 'btn_game_logs' in btn_lst %}
+                <li class="dropdown {%if game_log%}active{%endif%}" ><a href=""><span class="iconfa-laptop"></span>游戏日志数据</a>
+                    <ul style="{% if 'log' == path %}display: block; {% else %}display: none;{% endif %}">
+                        <li class="dropdown"><a href="">产品每日概况</a>
+                            <ul>
+                                <li class="" ><a href="/Tyranitar6/log/statistics_total">统计总表</a></li>
+                                <li class="" ><a href="/Tyranitar6/log/user_retain">用户留存</a></li>
+                                <!--<li><a href="/Tyranitar6/log/online_time">用户在线时长</a></li>-->
+                                <!--<li><a href="/Tyranitar6/log/amount_analyse">刷量分析</a></li>-->
+                                <!--<li><a href="/Tyranitar6/log/online_time_user_num">用户在线数据</a></li>-->
+                            </ul>
+                        </li>
+
+                        <li class="dropdown"><a href="">玩家付费</a>
+                            <ul>
+                                <li><a href="/Tyranitar6/log/payment_point_analyse">付费点</a></li>
+                                <li><a href="/Tyranitar6/log/payment_level_analyse">各等级充值概况</a></li>
+                                <li><a href="/Tyranitar6/log/player_first_recharge_level">用户首次充值等级</a></li>
+                                <li><a href="/Tyranitar6/log/recharge_cycle">充值周期</a></li>
+                                <li><a href="/Tyranitar6/log/new_k_days_income">新增K日收益统计</a></li>
+                                <li><a href="/Tyranitar6/log/user_life_time_value">用户终身价值</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown"><a href="">用户统计</a>
+                            <ul>
+                                <li><a href="/Tyranitar6/log/vip_distributed">vip分布</a></li>
+                                <li><a href="/Tyranitar6/log/user_first_recharge">玩家首冲情况</a></li>
+                                <li><a href="/Tyranitar6/log/user_recharge_state">玩家充值情况</a></li>
+                                <!--<li><a href="">周期用户跟踪</a></li>-->
+                                <!--<li><a href="">忠实玩家数</a></li>-->
+                            </ul>
+                        </li>
+
+                        <li class="dropdown"><a href="">流失分析</a>
+                            <ul>
+                                <li><a href="/Tyranitar6/log/newbie_state">新手完成情况</a></li>
+                                <li><a href="/Tyranitar6/log/guide_state">引导完成情况</a></li>
+                                <!--<li><a href="">登陆流程监控</a></li>-->
+                                <li><a href="/Tyranitar6/log/user_level_lost_state">整体用户等级流失情况</a></li>
+                                <!--<li><a href="">付费用户等级流失情况</a></li>-->
+                                <li><a href="/Tyranitar6/log/user_level_state">每日玩家等级表现</a></li>
+                                <li><a href="/Tyranitar6/log/user_structure">用户构成</a></li>
+                                <li><a href="/Tyranitar6/log/user_life_cycle">生命周期</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown"><a href="">首日体验</a>
+                            <ul>
+                                <li><a href="/Tyranitar6/log/user_first_play_level">用户首日等级留存</a></li>
+                                <li><a href="/Tyranitar6/log/first_play_time">首次游戏时长</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown"><a href="">消费点分析</a>
+                            <ul>
+                                <li><a href="/Tyranitar6/log/user_first_cost_stone">用户首次钻石消费点分析</a></li>
+                                <li><a href="/Tyranitar6/log/user_first_cost_gold">用户首次金币消费点分析</a></li>
+                                <li><a href="/Tyranitar6/log/daily_consume_distributed_stone">日常钻石消费点分布</a></li>
+                                <li><a href="/Tyranitar6/log/daily_consume_distributed_gold">日常金币消费点分布</a></li>
+                                <li><a href="/Tyranitar6/log/user_level_consume_stone_state">等级钻石消耗情况</a></li>
+                                <li><a href="/Tyranitar6/log/user_level_consume_gold_state">等级金币消耗情况</a></li>
+                                <li><a href="/Tyranitar6/log/user_stone_shop">钻石商城物品购买</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown"><a href="">数值平衡</a>
+                            <ul>
+                                <li><a href="/Tyranitar6/log/user_generate_gold">金币产出</a></li>
+                                <li><a href="/Tyranitar6/log/user_generate_stone">钻石产出</a></li>
+                                <li><a href="/Tyranitar6/log/user_cost_gold">金币消耗</a></li>
+                                <li><a href="/Tyranitar6/log/user_cost_stone">钻石消耗</a></li>
+                                <li><a href="/Tyranitar6/log/user_hold_gold">玩家金币持有</a></li>
+                                <li><a href="/Tyranitar6/log/user_hold_stone">玩家钻石持有</a></li>
+                                <li><a href="/Tyranitar6/log/user_cost_gold_with_vip">玩家金币消耗(VIP用户)</a></li>
+                                <li><a href="/Tyranitar6/log/user_cost_stone_with_vip">玩家钻石消耗(VIP用户)</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown"><a href="">活动模块分析</a>
+                            <ul>
+                                <li><a href="/Tyranitar6/log/fishing">钓鱼</a></li>
+                                <li><a href="/Tyranitar6/log/finger_guess">猜拳</a></li>
+                                <li><a href="/Tyranitar6/log/question">问答</a></li>
+                                <li><a href="/Tyranitar6/log/tonic">进补</a></li>
+                                <li><a href="/Tyranitar6/log/massage">按摩</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown"><a href="">宠物相关统计</a>
+                            <ul>
+                                <li><a href="/Tyranitar6/log/create_monster">宠物产出统计</a></li>
+                                <li><a href="/Tyranitar6/log/remove_monster">宠物消耗统计</a></li>
+                                <li><a href="/Tyranitar6/log/monster_reset_individual">宠物洗练统计</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown"><a href="">装备相关统计</a>
+                            <ul>
+                                <li><a href="/Tyranitar6/log/create_equipment">装备产出统计</a></li>
+                                <li><a href="/Tyranitar6/log/consume_equipment">装备消耗统计</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown"><a href="">物品相关统计</a>
+                            <ul>
+                                <li><a href="/Tyranitar6/log/create_item">物品产出统计</a></li>
+                                <li><a href="/Tyranitar6/log/consume_item">物品消耗统计</a></li>
+                                <li><a href="/Tyranitar6/log/cost_stamina">体力消耗统计</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown"><a href="">副本进度</a>
+                            <ul>
+                                <li><a href="/Tyranitar6/log/stage_normal">普通副本</a></li>
+                                <li><a href="/Tyranitar6/log/stage_hard">困难副本</a></li>
+                                <li><a href="/Tyranitar6/log/stage_exp">经验副本</a></li>
+                                <li><a href="/Tyranitar6/log/stage_gold">金币副本</a></li>
+                                <li><a href="/Tyranitar6/log/stage_trial">试炼副本</a></li>
+                                <li><a href="/Tyranitar6/log/stage_gym">道馆副本</a></li>
+                                <li><a href="/Tyranitar6/log/stage_world_boss">世界BOSS副本</a></li>
+                                <li><a href="/Tyranitar6/log/stage_catch_monster">抓宠副本</a></li>
+                                <li><a href="/Tyranitar6/log/stage_treasure_battle">夺宝副本</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown"><a href="">联盟信息</a>
+                            <ul>
+                                <li><a href="/Tyranitar6/log/union_count">联盟统计</a></li>
+                                <li><a href="/Tyranitar6/log/union_sign">联盟签到</a></li>
+                                <li><a href="/Tyranitar6/log/union_buy_reward">联盟奖励</a></li>
+                                <li><a href="/Tyranitar6/log/union_stage">联盟副本分析</a></li>
+                                <li><a href="/Tyranitar6/log/union_shop">联盟商城</a></li>
+                                <li><a href="/Tyranitar6/log/union_hall">联盟殿堂</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown"><a href="">好友</a>
+                            <ul>
+                                <li><a href="/Tyranitar6/log/friend_count/">好友功能</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="">特殊活动</a>
+                            <ul>
+                                <li><a href="/Tyranitar6/log/seven_days_lv/">七天冲级</a></li>
+                                <li><a href="/Tyranitar6/log/seven_days_fight/">七天战力</a></li>
+                                <li><a href="/Tyranitar6/log/max_will/">满额福利</a></li>
+                                <li><a href="/Tyranitar6/log/give_me_give_you/">消费有礼</a></li>
+                                <li><a href="/Tyranitar6/log/friendly_shop/">友好商店</a></li>
+                                <li><a href="/Tyranitar6/log/wei_chat/">微信分享</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="">豪华签到</a>
+                             <ul>
+                                <li><a href="/Tyranitar6/log/sign_count">次数统计</a></li>
+                                <!--<li><a href="/Tyranitar6/log/sign_create">产出统计</a></li>-->
+                                <!--<li><a href="/Tyranitar6/log/#">3</a></li>-->
+                                <!--<li><a href="/Tyranitar6/log/#">4</a></li>-->
+                                <!--<li><a href="/Tyranitar6/log/#">5</a></li>-->
+                            </ul>
+                        </li>
+                        <!--<li class="dropdown"><a href="">任务进度</a>-->
+                            <!--<ul>-->
+                                <!--<li><a href="">任务</a></li>-->
+                                <!--<li><a href="">日常任务</a></li>-->
+                            <!--</ul>-->
+                        <!--</li>-->
+
+                        <!--<li class="dropdown"><a href="">宠物相关统计</a>-->
+                            <!--<ul>-->
+                                <!--<li><a href="">宠物产出、消耗统计</a></li>-->
+                                <!--<li><a href="">宠物星级统计</a></li>-->
+                                <!--<li><a href="">宠物进化统计</a></li>-->
+                                <!--<li><a href="">宠物洗练统计</a></li>-->
+                                <!--<li><a href="">宠物使用情况</a></li>-->
+                                <!--<li><a href="">宠物等级统计</a></li>-->
+                                <!--<li><a href="">宠物技能统计</a></li>-->
+                                <!--<li><a href="">宠物碎片产出消耗</a></li>-->
+                                <!--<li><a href="">宠物灵魂石持有统计</a></li>-->
+                                <!--<li><a href="">装备产出、消耗</a></li>-->
+                                <!--<li><a href="">装备持有统计</a></li>-->
+                            <!--</ul>-->
+                        <!--</li>-->
+
+                        <!--<li class="dropdown"><a href="">道具相关统计</a>-->
+                            <!--<ul>-->
+                                <!--<li><a href="">体力消耗统计</a></li>-->
+                                <!--<li><a href="">经验道具持有统计</a></li>-->
+                                <!--<li><a href="">经验道具产出、消耗统计</a></li>-->
+                                <!--<li><a href="">突破材料产出、消耗、持有统计</a></li>-->
+                                <!--<li><a href="">太阳石产出、消耗统计</a></li>-->
+                                <!--<li><a href="">洗练石产出、消耗统计</a></li>-->
+                            <!--</ul>-->
+                        <!--</li>-->
+                    </ul>
+                </li>
+                {% endif %}
+                {#GM后台开始#}
+                {% if 'btn_gm_function' in btn_lst %}
+                <li class="dropdown {%if game_log%}active{%endif%}" ><a href=""><span class="iconfa-laptop"></span>GM后台查询</a>
+                    <ul style="{% if 'gm' == path %}display: block; {% else %}display: none;{% endif %}">
+                        <li class="dropdown"><a href="">充值管理</a>
+                            <ul>
+                                <li class="" ><a href="/Tyranitar6/gm/recharge_search/">充值查询</a></li>
+                                <li class="" ><a href="/Tyranitar6/gm/cost_search">消费查询</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="">玩家行为查询</a>
+                            <ul>
+                                <li class="" ><a href="/Tyranitar6/gm/stage_player_behavior/">玩家所有行为的查询</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="">排行榜查询</a>
+                            <ul>
+                                <li class="" ><a href="/Tyranitar6/gm/sort_rmb">充值排行榜</a></li>
+                                <li class="" ><a href="/Tyranitar6/gm/expense_sort">消费排行榜</a></li>
+                                <li class=""><a href="/Tyranitar6/gm/level_rank_list">等级排行榜</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="">数据查询</a>
+                            <ul>
+                                <li class="" ><a href="/Tyranitar6/gm/user_cost">消耗记录</a></li>
+                                <li class="" ><a href="/Tyranitar6/gm/user_get">物品获得记录</a></li>
+                                <li class=""><a href="/Tyranitar6/gm/equipment_strengthening_record/">装备强化记录</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="">聊天监控</a>
+                            <ul>
+                                <li class="" ><a href="/Tyranitar6/gm/get_chat_content">聊天系统监控</a></li>
+                                <li class="" ><a href="/Tyranitar6/gm/get_union_chat_content">联盟聊天系统监控</a></li>
+                                <!--<li class="" ><a href="/Tyranitar6/gm/account_release_forbiden" >账号封禁</a></li>-->
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="">GM行为查询</a>
+                            <ul>
+                                <li class="" ><a href="/Tyranitar6/gm/manager_operation">GM行为查询</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                {% endif %}
+                {#gm后台结束#}
+                <!--数据后台开始-->
+                {% if 'btn_search' in btn_lst %}
+                <li class="dropdown {%if game_log%}active{%endif%}" ><a hrsef=""><span class="iconfa-laptop"></span>数据后台</a>
+                    <ul style="{% if 'data_edit' == path %}display: block; {% else %}display: none;{% endif %}">
+                        <li class="" ><a href="http://s10001.sh.1251506402.clb.myqcloud.com:8083/A6ksi/login/">老数据后台链接</a></li>
+                        <li class="" ><a href="/Tyranitar6/data_edit/user_info_edit/">用户管理</a></li>
+                        <li class="" ><a href="/Tyranitar6/data_edit/player_info_edit/">角色管理</a></li>
+                        <li class="" ><a href="/Tyranitar6/data_edit/private_mail_model/">玩家私信</a></li>
+                        <li class="" ><a href="/Tyranitar6/data_edit/union_shop_model/">玩家联盟商店</a></li>
+
+                        <li class="" ><a href="/Tyranitar6/data_edit/monster_info_edit/">宠物信息</a></li>
+                        <li class="" ><a href="/Tyranitar6/data_edit/items_info/">物品数据</a></li>
+                        <li class="" ><a href="/Tyranitar6/data_edit/player_team/">玩家队伍</a></li>
+                        <li class="" ><a href="/Tyranitar6/data_edit/sign_30_model/">30天签到</a></li>
+                        <li class="" ><a href="/Tyranitar6/data_edit/login_7_model/">7天登录</a></li>
+                        <li class="" ><a href="/Tyranitar6/data_edit/zone_info_edit/">玩家区域查询</a></li>
+                        <li class="" ><a href="/Tyranitar6/data_edit/player_stage_edit/">关卡管理</a></li>
+                        <li class="" ><a href="/Tyranitar6/data_edit/player_catch_monster/">抓宠副本</a></li>
+                        <li class="" ><a href="/Tyranitar6/data_edit/mail_info_edit/">邮件信息</a></li>
+                        <li class="" ><a href="/Tyranitar6/data_edit/handbook_info/">图鉴信息</a></li>
+                        <li class="" ><a href="/Tyranitar6/data_edit/equip_info_edit/">装备数据</a></li>
+{#                        <li class="" ><a href="/Tyranitar6/data_edit/treasure_item_model/">玩家宝物</a></li>#}
+                        <li class="" ><a href="/Tyranitar6/data_edit/player_trial_essence_info/">玩家熔炼精华副本</a></li>
+                        <li class="" ><a href="/Tyranitar6/data_edit/player_reward_seven_level_info/">玩家开服七天等级</a></li>
+                        <li class="" ><a href="/Tyranitar6/data_edit/player_reward_seven_power_info/">玩家开服七天战力</a></li>
+                        <li class="dropdown"><a href="">运营活动奖励</a>
+                            <ul>
+                                <li class="" ><a href="/Tyranitar6/data_edit/everyday_vip_reward/">运营每日VIP福利</a></li>
+                                <li class="" ><a href="/Tyranitar6/data_edit/player_activity_gym/">运营活动道馆</a></li>
+                                <li class="" ><a href="/Tyranitar6/data_edit/player_activity_treasure/">运营活动夺宝</a></li>
+                                <li class="" ><a href="/Tyranitar6/data_edit/player_activity_fishing/">运营活动钓鱼</a></li>
+                                <li class="" ><a href="/Tyranitar6/data_edit/player_activity_recharge_short/">运营活动短期限时充值</a></li>
+                                <li class="" ><a href="/Tyranitar6/data_edit/player_activity_recharge_long/">运营活动长期限时充值</a></li>
+                                <li class="" ><a href="/Tyranitar6/data_edit/player_activity_one_charge/">运营活动限单笔金额</a></li>
+                                <li class="" ><a href="/Tyranitar6/data_edit/player_activity_regist_recharge/">运营活动豪华充值</a></li>
+                                <li class="" ><a href="/Tyranitar6/data_edit/player_activity_stone_consumption/">运营活动消耗钻石</a></li>
+                                <li class="" ><a href="/Tyranitar6/data_edit/player_activity_holiday_shop/">运营活动假日商店</a></li>
+                                <li class="" ><a href="/Tyranitar6/data_edit/player_activity_time_limited_shop/">运营活动便利商店</a></li>
+                                <li class="" ><a href="/Tyranitar6/data_edit/player_activity_time_limited_shift_shop/">运营活动友好商店</a></li>
+                                <li class="" ><a href="/Tyranitar6/data_edit/activity_normal_stage/">运营活动普通副本</a></li>
+                                <li class="" ><a href="/Tyranitar6/data_edit/activity_hard_stage/">运营活动困难副本</a></li>
+                                <li class="" ><a href="/Tyranitar6/data_edit/arena_reward_times_info/">运营活动竞技高手</a></li>
+                                <li class="" ><a href="/Tyranitar6/data_edit/player_activity_finger_guess/">运营活动猜拳高手</a></li>
+                                <li class="" ><a href="/Tyranitar6/data_edit/player_activity_weixin_share/">运营活动微信分享</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="">竞技场信息</a>
+                            <ul>
+                                <li class="" ><a href="/Tyranitar6/data_edit/arena_report_info/">竞技场战报</a></li>
+                                <li class="" ><a href="/Tyranitar6/data_edit/arena_reward_times_info/">竞技场奖励</a></li>
+                            </ul>
+                        </li>
+                        <li class="" ><a href="/Tyranitar6/data_edit/trial_info/">玩家试炼</a></li>
+                        <li class="dropdown"><a href="">玩家充值</a>
+                            <ul>
+                                <li class="" ><a href="/Tyranitar6/data_edit/daily_charge_reward_info/">每日充值奖励</a></li>
+                                <li class="" ><a href="/Tyranitar6/data_edit/sum_charge_reward_info/">累计充值奖励</a></li>
+                                <li class="" ><a href="/Tyranitar6/data_edit/player_charge_info/">玩家充值信息</a></li>
+                            </ul>
+                        </li>
+                        <li class="" ><a href="/Tyranitar6/data_edit/player_invitation_info/">玩家邀请</a></li>
+                        <li class="dropdown"><a href="">世界BOSS</a>
+                            <ul>
+                                <li class="" ><a href="/Tyranitar6/data_edit/boss_kyurem_info/">冰龙酋雷姆</a></li>
+                                <li class="" ><a href="/Tyranitar6/data_edit/boss_snorlax_info/">暴风洛奇亚</a></li>
+                            </ul>
+                        </li>
+                        <li class="" ><a href="/Tyranitar6/data_edit/daily_task_info/">每日任务</a></li>
+                        <li class="dropdown"><a href="">商店</a>
+                            <ul>
+                                <li class="" ><a href="/Tyranitar6/data_edit/stone_shop_info/">钻石商店</a></li>
+                                <li class="" ><a href="/Tyranitar6/data_edit/pvp_shop_info/">PVP商店</a></li>
+                                <li class="" ><a href="/Tyranitar6/data_edit/world_boss_shop_info/">世界BOSS商店</a></li>
+                                <li class="" ><a href="/Tyranitar6/data_edit/ditto_shop_info/">百变怪商店</a></li>
+                                <li class="" ><a href="/Tyranitar6/data_edit/gym_shop_info/">道馆商店</a></li>
+                            </ul>
+                        </li>
+                        <li class="" ><a href="/Tyranitar6/data_edit/gym_info/">道馆</a></li>
+                        <li class="dropdown" ><a href="">联盟</a>
+                            <ul>
+                                <li class="" ><a href="/Tyranitar6/data_edit/union_stage/">联盟关卡</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <!--数据后台结束-->
+                {% endif %}
+
+                {% if 'server_super' in btn_lst %}
+                <li class="dropdown {%if game_log%}active{%endif%}" ><a href=""><span class="iconfa-laptop"></span>服务器信息管理</a>
+                    <ul style="{% if 'server' == path %}display: block; {% else %}display: none;{% endif %}">
+
+                        <li class="" ><a href="/Tyranitar6/server/server_config/publish/">配置信息上传</a></li>
+                        <li class="" ><a href="/Tyranitar6/server/server_config/view/">配置信息发布</a></li>
+                        <li class="" ><a href="/Tyranitar6/server/server_lst/">服务器信息列表</a></li>
+                        <li class="" ><a href="/Tyranitar6/server/version_notice_lst/">版本公告</a></li>
+                        <li class="" ><a href="/Tyranitar6/server/activity_lst/">运营活动</a></li>
+                        <li class="dropdown"><a href="">礼包兑换</a>
+                            <ul>
+                                <li class="" ><a href="/Tyranitar6/server/gift_package_lst/">礼包类型</a></li>
+                                <li class="" ><a href="/Tyranitar6/server/exchange_code_info/">兑换码</a></li>
+                            </ul>
+                        </li>
+                        <li class="" ><a href="/Tyranitar6/server/notice_lst/">系统广播</a></li>
+                        <li class="" ><a href="/Tyranitar6/server/system_mail_lst/">系统邮件</a></li>
+                        <li class="" ><a href="/Tyranitar6/server/player_commit_bugs_lst/">游戏BUG管理</a></li>
+
+                    </ul>
+                </li>
+                {% endif %}
+
+
+                {%endblock%}
+
+            </ul>
+        </div><!--leftmenu-->
+    </div><!-- leftpanel -->
+
+    <div class="rightpanel">
+        {%block right_panel%}
+        {%endblock%}
+    </div>
+
+</div><!--mainwrapper-->
+
+</body>
+
+</html>

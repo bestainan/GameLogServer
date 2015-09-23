@@ -1,0 +1,79 @@
+{% extends "base/base.html" %}
+
+{%block right_panel%}
+        <div class="maincontent">
+            <div class="maincontentinner">
+
+                <div class="widget">
+                    <h4 class="widgettitle">数据筛选</h4>
+                    <div class="widgetcontent">
+                        <form class="stdform" action="/Tyranitar6/gm/stage_player_behavior/" method="post">
+                            <div class="par">
+                                <label>查询日期:</label>
+                                <span class="field"><input  style="cursor:pointer"   id="start_date_picker" name="sreach_data" class="input-small" type="text"  readonly="true" value={{sreach_data}}></span>
+                                <label>帐号ID:</label>
+                                <span class="field"><input id="player_id" name="search_player_id" class="input-small" type="text" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')"  value={{search_player_id}}></span>
+                                <label>游戏区服</label>
+                                <span class="field">
+                                <select id="server_id" name="server_id" class="uniformselect" value={{server_id}}>
+                                    {% for content in server_list %}
+                                        <option value="{{content.id}}" {% ifequal content.id server_id %}selected="selected"{% endifequal %}>
+                                            {{content.name}}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+
+
+                                </span>
+                                <label>事件:</label>
+                                <span class="field">
+                                <select id="event_id" name="event_id" class="uniformselect" value={{event_id}}>
+                                    {% for content in event_list %}
+                                        <option value="{{content.id}}" {% ifequal content.id cur_event_id %}selected="selected"{% endifequal %}>
+                                            {{content.id}} - {{content.name}}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                                <span class="stdformbutton">
+                                    <button class="btn btn-primary">&nbsp; 提&nbsp;交&nbsp;</button>
+                                </span>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <h4 class="widgettitle">玩家所有行为的分析</h4>
+                <div id="dyntable_wrapper" class="dataTables_wrapper" role="grid">
+                    <table aria-describedby="dyntable_info" id="dyntable" class="table table-bordered responsive dataTable">
+                        <colgroup>
+                            <col class="con1">
+                            <col class="con0">
+                            <col class="con1">
+                            <col class="con0">
+                            <col class="con1">
+                        </colgroup>
+                        <thead>
+                            <tr role="row">
+
+                                {% for head in head_lst %}
+                                    <th style="width: {{head.width}}px;" colspan="1" rowspan="1" aria-controls="dyntable" tabindex="0" role="columnheader" class="head{{forloop.counter0}} sorting">{{head.name}}</th>
+                                {% endfor %}
+                               </tr>
+                        </thead>
+
+                        <tbody aria-relevant="all" aria-live="polite" role="alert">
+                            {% for row in row_lst %}
+                                <tr class="gradeX odd">
+                                    {% for column in row %}
+                                        <td class="center">{{column}}</td>
+                                    {% endfor %}
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+{%endblock%}

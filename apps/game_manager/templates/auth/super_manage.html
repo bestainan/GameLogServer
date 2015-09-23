@@ -1,0 +1,73 @@
+{% extends "base/base.html" %}
+
+{%block right_panel%}
+        <div class="maincontent">
+            <div class="maincontentinner">
+
+                <h4 class="widgettitle">超级管理员</h4>
+                <div id="dyntable_wrapper" class="dataTables_wrapper" role="grid">
+                    <table aria-describedby="dyntable_info" id="dyntable" class="table table-bordered responsive dataTable">
+                        <colgroup>
+                            <!--<col class="con0" style="align: center; width: 4%">-->
+                            <col class="con1">
+                            <col class="con0">
+                            <col class="con1">
+                            <col class="con0">
+                            <col class="con1">
+                        </colgroup>
+                        <thead>
+                            <tr role="row">
+
+                                {% for head in head_lst %}
+                                    <th style="width: {{head.width}}px;" colspan="1" rowspan="1" aria-controls="dyntable" tabindex="0" role="columnheader" class="head{{forloop.counter0}} sorting">{{head.name}}</th>
+                                {% endfor %}
+                            </tr>
+                        </thead>
+
+                        <tbody aria-relevant="all" aria-live="polite" role="alert">
+                            {% for row in row_lst %}
+                                <tr class="gradeX odd">
+                                    {% for value in row %}
+                                        <td class="center" >{{value}}</td>
+                                    {% endfor %}
+                                    <td class="center">
+                                        <form class = 'button_one_line' action="/Tyranitar6/super_man/update_user/" method="post">
+                                            <input name="account" type="hidden" value={{row.1}}>
+                                            <input name="name" type="hidden" value={{row.2}}>
+                                            <input name="permission" type="hidden" value={{row.3}}>
+                                            <input name="description" type="hidden" value={{row.6}}>
+                                            <button type="submit" class="btn btn-primary" >修改</button>
+                                        </form>
+                                        <form class = 'button_one_line' action="/Tyranitar6/super_man/delete_user/" method="post" onsubmit="return checkForm()">
+                                            <input name="id" type="hidden" value={{row.0}}>
+                                            <button type="submit" class="btn btn-primary" >删除</button>
+                                        </form>
+                                    </td>
+
+                                </tr>
+                            {% endfor %}
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+        <form class="stdform" action="/Tyranitar6/super_man/register_user/" method="post">
+                            <div class="par">
+                                <span class="stdformbutton">
+                                    <button class="btn btn-primary">增加管理员</button>
+                                </span>
+                                <!--<button class="btn btn-primary">确定</button>-->
+                            </div>
+                        </form>
+<script type="text/javascript">
+   function checkForm() {
+    if (window.confirm("确定要删除这个管理员吗?")) {
+     return true;
+    }
+    return false;
+   }
+</script>
+
+{%endblock%}

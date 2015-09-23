@@ -1,0 +1,209 @@
+{% extends "base/base.html" %}
+
+{%block right_panel%}
+        <div class="maincontent">
+            <div class="maincontentinner">
+                <p>
+                   <b> * 活动版本号(日期活动标识id每一项的版本号(例如：20150618_12_01：当前日期：20150618；活动id标识：12-限时充值-短期；版本号：01 每修改一个版本需版本号+1))</b>
+                </p>
+                <p>
+                   <b>* 活动id标识：(0:当日返利;1:满额返利;2:充值双倍;3:钻石商城折扣;4:抽卡折扣;5:普通副本;6:困难副本;7:竞技场;8:道馆;9;夺宝;
+                                10:钓鱼;11:猜拳;12:限时充值-短期;13:限时充值-长期;14:单笔金额奖励;17:活动预告;18:活动预告2;19:钻石消耗;20:假日商店;
+                       21:便利商店;22:友好商店)</b>
+                </p>
+
+                <p>
+                    <b>* 预告详情 * 预告2详情 (展示时自动过滤了换行符，点确认按钮时一定要确认好里面的内容是否有'\n','\n\n'))</b>
+                </p>
+                <div class="widget">
+                    <h4 class="widgettitle">编辑运营活动</h4>
+
+                    <div class="widgetcontent">
+                        <form class="stdform" action="/Tyranitar6/server/activity_update/" method="post">
+                            <div class="par">
+
+                                <input name="act_id" type="hidden"  value={{activity.activity_id}} readOnly="true" />
+
+                                <p>
+                                    <label>服务器ID:</label>
+                                    <input type="text" name="server_id"  value={{activity.server_id}}  />
+                                </p>
+
+                                <p>
+                                    <label>开始日期:</label>
+                                    <span class="field"><input style="cursor:pointer" readonly="true"  id="start_date_picker"  name="begin_time" value={{activity.begin_time}} class="input-small" type="text" ></span>
+                                </p>
+                                <p>
+                                    <label>时间长度(int):</label>
+                                    <input type="text" name="time_length" value={{activity.time_length}} />
+                                </p>
+                                <p>
+                                    <label>时间间隔(int):</label>
+                                    <input type="text" name="time_distance" value={{activity.time_distance}} />
+                                </p>
+                                <label>活动状态:</label>
+                                <!-- -->
+                                <select  name="is_forced_open" class="uniformselect" >
+                                                {% for key,val in activity_state_val%}
+                                                    {% if activity.is_forced_open == key %}
+                                                        <option value ={{activity.is_forced_open}} selected="selected">
+                                                    {% else %}
+                                                        <option value ={{key}} >
+                                                    {% endif %}
+                                                            {{val}}
+                                                        </option>
+                                                {% endfor %}
+                                </select>
+
+                                <p>
+                                    <label>活动版本号:</label>
+                                    <input type="text" name="new" value={{activity.new}} />
+                                </p>
+                                <p>
+                                    <label>金币(int):</label>
+                                    <input type="text" name="gold" value={{activity.gold}} />
+                                </p>
+                                <p>
+                                    <label>钻石(int):</label>
+                                    <input type="text" name="stone" value={{activity.stone}} />
+                                </p>
+                                <p>
+                                    <label>宝贝球(int):</label>
+                                    <input type="text" name="free" value={{activity.free}} />
+                                </p>
+                                <p>
+                                    <label>经验值(int):</label>
+                                    <input type="text" name="exp" value={{activity.exp}} />
+                                </p>
+                                <label>装备:</label>
+                                <!-- -->
+                                <select  name="equip" class="uniformselect" >
+                                                {% for key,val in activity_equip_val%}
+                                                    {% if activity.equip == key %}
+                                                        <option value ={{activity.equip}} selected="selected">
+                                                    {% else %}
+                                                        <option value ={{key}} >
+                                                    {% endif %}
+                                                            {{val}}
+                                                        </option>
+                                                {% endfor %}
+                                </select>
+                                 <p>
+                                    <label>宠物:</label>
+                                    <!-- -->
+                                    <select  name="monster" class="uniformselect" >
+                                                    {% for key,val in activity_monster_val%}
+                                                        {% if activity.monster == key %}
+                                                            <option value ={{activity.monster}} selected="selected">
+                                                        {% else %}
+                                                            <option value ={{key}} >
+                                                        {% endif %}
+                                                                {{val}}
+                                                            </option>
+                                                    {% endfor %}
+                                    </select>
+                                 <p>
+                                <p>
+                                    <label>星级(int):</label>
+                                    <input type="text" name="star" value={{activity.star}} />
+                                </p>
+                                <p>
+                                    <label>折扣（几折:1-10折 (int):</label>
+                                    <input type="text" name="discount" value={{activity.discount}} />
+                                </p>
+                                <p>
+                                    <label>预告页签:</label>
+                                    <!--<input type="text" name="label" value={{activity.label}} />-->
+                                    <textarea cols="1"  rows="1" name="label" >{{activity.label}}</textarea>
+                                </p>
+                                <p>
+                                    <label>预告titile(4个字):</label>
+                                    <textarea cols="1"  rows="1" name="title" >{{activity.title}}</textarea>
+                                    <!--<input type="text" name="title" value={{activity.title}} />-->
+                                </p>
+                                <p>
+                                    <label>预告详情:</label>
+                                    <textarea cols="100"  rows="10" name="detail" >{{activity.detail}}</textarea>
+                                </p>
+                                <p>
+                                    <label>预告2页签:</label>
+                                    <!--<input type="text" name="label2" value={{activity.label2}} />-->
+                                    <textarea cols="1"  rows="1" name="label2" >{{activity.label2}}</textarea>
+                                </p>
+                                <p>
+                                    <label>预告2titile(4个字):</label>
+                                    <!--<input type="text" name="title2" value={{activity.title2}} />-->
+                                    <textarea cols="1"  rows="1" name="title2" >{{activity.title2}}</textarea>
+                                </p>
+                                <p>
+                                    <label>预告2详情:</label>
+                                    <textarea cols="100"  rows="10" name="detail2" >{{activity.detail2}}</textarea>
+                                </p>
+                                <label>物品1:</label>
+                                <!-- -->
+                                <select  name="item_id1" class="uniformselect" >
+                                                {% for key,val in activity_item_val%}
+                                                    {% if activity.item_id1 == key %}
+                                                        <option value ={{activity.item_id1}} selected="selected">
+                                                    {% else %}
+                                                        <option value ={{key}} >
+                                                    {% endif %}
+                                                            {{val}}
+                                                        </option>
+                                                {% endfor %}
+                                </select>
+                                <p>
+                                    <label>物品数量1(int):</label>
+                                    <input type="text" name="item_num1" value={{activity.item_num1}} />
+                                </p>
+                                <label>物品2:</label>
+                                <!-- -->
+                                <select  name="item_id2" class="uniformselect" >
+                                                {% for key,val in activity_item_val%}
+                                                    {% if activity.item_id2 == key %}
+                                                        <option value ={{activity.item_id2}} selected="selected">
+                                                    {% else %}
+                                                        <option value ={{key}} >
+                                                    {% endif %}
+                                                            {{val}}
+                                                        </option>
+                                                {% endfor %}
+                                </select>
+                                <p>
+                                    <label>物品数量2(int):</label>
+                                    <input type="text" name="item_num2" value={{activity.item_num2}} />
+                                </p>
+                                <label>物品3:</label>
+                                <!-- -->
+                                <select  name="item_id3" class="uniformselect" >
+                                                {% for key,val in activity_item_val%}
+                                                    {% if activity.item_id3 == key %}
+                                                        <option value ={{activity.item_id3}} selected="selected">
+                                                    {% else %}
+                                                        <option value ={{key}} >
+                                                    {% endif %}
+                                                            {{val}}
+                                                        </option>
+                                                {% endfor %}
+                                </select>
+                                <p>
+                                    <label>物品数量3(int):</label>
+                                    <input type="text" name="item_num3" value={{activity.item_num3}} />
+                                </p>
+                             <!--<p>-->
+                                <!--<button type="submit" class="btn btn-primary">确认</button>-->
+                            <!--</p>-->
+                                <span class="stdformbutton">
+                                    <button type="submit" class="btn btn-primary">&nbsp; 确&nbsp;认&nbsp;</button>
+                                </span>
+                                <!--<button class="btn btn-primary">确定</button>-->
+                            </div>
+                        </form>
+                    </div><!--widgetcontent-->
+
+
+                </div><!--widget-->
+
+            </div>
+        </div>
+{%endblock%}

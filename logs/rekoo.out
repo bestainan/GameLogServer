@@ -1,0 +1,472 @@
+2014-01-01 17:17:14.802683 timeit view: : 0.040
+2014-01-01 17:19:18.625941 timeit view: : 0.004
+2014-01-01 17:19:18.732853 timeit view: static..img.403.jpg: 0.032
+2014-01-01 17:22:49.261601 timeit view: : 0.695
+2014-01-01 17:24:12.170507 timeit view: : 0.389
+2014-01-01 17:25:43.898448 timeit view: : 0.084
+2014-01-01 17:26:26.951384 timeit view: : 0.047
+2014-01-01 17:26:27.033888 timeit view: static..js.swfobject.swfobject.2.2.min.js: 0.002
+2014-01-01 17:26:27.076098 timeit view: static..js.rekoo.app.0.4.js: 0.034
+2014-01-01 17:26:27.085460 timeit view: static..js.jquery.jquery.1.5.2.min.js: 0.037
+2014-01-01 17:26:27.093698 timeit view: static..img.daily_5_things.jpg: 0.001
+2014-01-01 17:26:27.260483 timeit view: static..img.daily_5_things.jpg: 0.001
+2014-01-01 17:26:41.552992 timeit view: : 0.042
+2014-01-01 17:26:41.633862 timeit view: static..js.jquery.jquery.1.5.2.min.js: 0.001
+2014-01-01 17:26:41.634734 timeit view: static..js.rekoo.app.0.4.js: 0.001
+2014-01-01 17:26:41.636885 timeit view: static..js.swfobject.swfobject.2.2.min.js: 0.001
+2014-01-01 17:26:41.688622 timeit view: static..img.daily_5_things.jpg: 0.001
+2014-01-01 17:26:42.037769 timeit view: static..img.daily_5_things.jpg: 0.001
+2014-01-01 17:28:04.619669 timeit view: : 0.044
+2014-01-01 17:28:35.750615 timeit view: api.user.scene: 0.001
+--------------- {'openid': None, 'rk_uid': None, 'ts': None, 'APP_ID': '11122', 'openkey': None, 'SECRET_KEY': 's3avlj$=vk16op_s1g!xyilse9azcu&oh#wln8_@!b+_p7-+@='}
+---222---- 1ff4baa9831011fabb3ce2c17c4af3ac 1ff4baa9831011fabb3ce2c17c4af3ac
+2014-01-01 17:32:19.335927 timeit view: : 0.037
+--------------- {'openid': None, 'rk_uid': None, 'ts': None, 'APP_ID': '11122', 'openkey': None, 'SECRET_KEY': 's3avlj$=vk16op_s1g!xyilse9azcu&oh#wln8_@!b+_p7-+@='}
+---222---- 1ff4baa9831011fabb3ce2c17c4af3ac 1ff4baa9831011fabb3ce2c17c4af3ac
+2014-01-01 17:32:28.923515 timeit view: api.user.scene: 0.002
+----------- {'rk_uid': '1000000000', 'openid': '123', 'openkey': '123'}
+2014-01-01 17:35:34.921328 timeit view: : 0.045
+----------- None
+2014-01-01 17:35:40.709078 timeit view: api.user.scene: 0.000
+----------- {'rk_uid': '1000000000', 'openid': '123', 'openkey': '123', 'ts': '1388568934'}
+2014-01-01 17:36:46.815307 timeit view: : 0.036
+----------- {'rk_uid': '1000000000', 'openid': '123', 'openkey': '123', 'ts': '1388569006'}
+2014-01-01 17:36:50.263534 timeit view: api.user.scene: 0.083
+----------- {'rk_uid': '1000000000', 'openid': '123', 'openkey': '123', 'ts': '1388569006'}
+2014-01-01 17:41:20.119124 timeit view: api.user.scene: 0.074
+2014-01-01 17:43:24.010585 timeit view: api.user.scene: 0.033
+2014-01-01 17:44:47.537227 timeit view: : 0.649
+2014-01-01 17:46:51.614811 timeit view: api.user.scene: 0.001
+2014-01-01 17:49:10.396884 timeit view: : 0.650
+2014-01-01 17:49:12.576655 timeit view: favicon.ico: 0.005
+2014-01-01 17:49:43.357913 timeit view: api.user.scene: 0.001
+2014-01-01 17:51:45.148743 timeit view: A6ksi: 0.003
+2014-01-01 17:53:02.308893 timeit view: favicon.ico: 0.034
+2014-01-01 17:53:36.727544 timeit view: A6ksi: 0.006
+2014-01-01 17:53:36.775129 timeit view: static..img.403.jpg: 0.037
+2014-01-01 17:53:36.828785 timeit view: favicon.ico: 0.001
+2014-01-01 17:53:41.749985 timeit view: A6ksi.login: 0.007
+2014-01-01 17:53:41.763684 timeit view: A6ksi.login: 0.004
+2014-01-01 17:53:41.806001 timeit view: static..img.403.jpg: 0.033
+2014-01-01 17:53:41.847988 timeit view: favicon.ico: 0.001
+2014-01-01 17:53:49.724989 timeit view: A6ksi.login: 0.001
+2014-01-01 17:53:49.736524 timeit view: static..img.403.jpg: 0.002
+2014-01-01 17:53:49.777954 timeit view: favicon.ico: 0.001
+2014-01-01 17:56:02.013223 timeit view: A6ksi: 0.003
+2014-01-01 17:56:02.026451 timeit view: A6ksi.login: 0.003
+2014-01-01 17:57:02.701319 timeit view: A6ksi.login: 0.049
+2014-01-01 17:57:02.716760 timeit view: A6ksi.main: 0.004
+2014-01-01 17:57:02.870308 timeit view: A6ksi.left: 0.007
+2014-01-01 17:57:09.003460 timeit view: A6ksi.game_setting: 0.013
+2014-01-01 17:57:11.869493 timeit view: A6ksi.game_setting: 0.011
+2014-01-01 17:57:14.217815 timeit view: A6ksi.game_setting: 0.011
+2014-01-01 17:57:15.182502 timeit view: A6ksi.game_setting: 0.011
+2014-01-01 17:57:16.304417 timeit view: A6ksi.game_setting: 0.011
+2014-01-01 17:57:17.154843 timeit view: A6ksi.game_setting: 0.011
+2014-01-01 17:57:17.864697 timeit view: A6ksi.game_setting: 0.011
+2014-01-01 17:57:19.550272 timeit view: A6ksi.game_setting: 0.009
+2014-01-01 17:57:20.216166 timeit view: A6ksi.game_setting: 0.011
+2014-01-01 17:57:21.461874 timeit view: A6ksi.game_setting: 0.012
+2014-01-01 17:57:49.582920 timeit view: A6ksi.game_setting: 0.097
+2014-01-01 17:57:56.204056 timeit view: A6ksi.game_setting: 0.003
+2014-01-01 17:58:02.916595 timeit view: A6ksi.game_setting: 0.057
+2014-01-01 17:58:05.244215 timeit view: A6ksi.system_setting: 0.005
+2014-01-01 17:58:06.901302 timeit view: A6ksi.publish_page: 0.017
+2014-01-01 17:58:09.155368 timeit view: A6ksi.language_setting: 0.006
+2014-01-01 17:58:10.022241 timeit view: A6ksi.download: 0.007
+2014-01-01 17:58:11.029136 timeit view: A6ksi.upload.page: 0.005
+2014-01-01 17:58:12.005162 timeit view: A6ksi.notice: 0.004
+2014-01-01 17:58:13.523578 timeit view: A6ksi.user: 0.004
+2014-01-01 17:58:14.405939 timeit view: A6ksi.gift: 0.007
+2014-01-01 17:58:15.269745 timeit view: A6ksi.debug_tools: 0.005
+2014-01-01 17:58:16.250973 timeit view: A6ksi.price: 0.015
+2014-01-01 17:58:18.788274 timeit view: A6ksi.debug_tools: 0.005
+2014-01-01 17:58:19.622750 timeit view: A6ksi.debug_scene.index: 0.004
+2014-01-01 17:58:20.580145 timeit view: A6ksi.check_changes: 0.014
+2014-01-01 17:58:21.306733 timeit view: A6ksi.publish_page: 0.006
+2014-01-01 17:58:22.250787 timeit view: A6ksi.payment: 0.046
+2014-01-01 17:58:23.411781 timeit view: A6ksi.payment.mall_statistic: 0.043
+2014-01-01 17:58:24.856445 timeit view: A6ksi.payment.find_order: 0.058
+2014-01-01 17:58:25.890497 timeit view: A6ksi.help: 0.005
+2014-01-01 17:58:27.183697 timeit view: A6ksi.video_wall: 0.013
+2014-01-01 17:58:27.951819 timeit view: A6ksi.check_changes: 0.014
+2014-01-01 17:58:29.246761 timeit view: A6ksi.game_setting: 0.011
+2014-01-01 17:58:36.334955 timeit view: A6ksi.moderator.moderator_list: 0.006
+2014-01-01 17:58:37.318195 timeit view: A6ksi.change_password: 0.006
+2014-01-01 17:58:38.121764 timeit view: A6ksi.server.message: 0.006
+2014-01-01 17:59:44.397492 timeit view: A6ksi.game_setting: 0.011
+2014-01-01 17:59:48.338294 timeit view: A6ksi.game_setting: 0.012
+2014-01-01 18:00:01.105645 timeit view: A6ksi.game_setting: 0.012
+2014-01-01 18:00:04.561153 timeit view: A6ksi.game_setting: 0.011
+2014-01-01 18:00:06.042857 timeit view: A6ksi.game_setting: 0.011
+2014-01-01 18:00:07.440240 timeit view: A6ksi.game_setting: 0.011
+2014-01-01 18:00:17.378053 timeit view: A6ksi.game_setting: 0.003
+2014-01-01 18:00:19.170201 timeit view: A6ksi.game_setting: 0.011
+2014-01-01 18:00:29.054954 timeit view: A6ksi.game_setting: 0.064
+2014-01-01 18:00:41.703204 timeit view: A6ksi.publish_page: 0.006
+2014-01-01 18:08:26.292735 timeit view: api.user.scene: 0.001
+2014-01-01 18:08:49.284291 timeit view: : 0.045
+2014-01-01 18:08:52.727793 timeit view: api.user.scene: 0.037
+2014-01-01 18:09:42.286146 timeit view: : 0.007
+2014-01-01 18:09:55.482996 timeit view: api.user.scene: 0.001
+2014-01-01 18:11:26.312460 timeit view: api.user.scene: 0.001
+2014-01-01 18:11:45.031044 timeit view: api.user.scene: 0.001
+2014-01-01 18:12:26.300984 timeit view: A6ksi.login: 0.002
+2014-01-01 18:12:27.304196 timeit view: static..img.403.jpg: 0.002
+2014-01-01 18:12:27.333648 timeit view: favicon.ico: 0.001
+2014-01-01 18:12:38.163115 timeit view: A6ksi: 0.035
+2014-01-01 18:12:38.229852 timeit view: A6ksi.login: 0.042
+2014-01-01 18:12:40.233687 timeit view: A6ksi.login: 0.081
+2014-01-01 18:12:40.253892 timeit view: A6ksi.main: 0.004
+2014-01-01 18:12:40.312690 timeit view: A6ksi.left: 0.007
+2014-01-01 18:12:45.056936 timeit view: A6ksi.user: 0.006
+2014-01-01 18:12:52.209144 timeit view: A6ksi.user.edit: 0.045
+2014-01-02 16:49:14.960971 timeit view: : 0.712
+2014-01-02 17:08:37.224294 timeit view: : 0.004
+2014-01-02 17:09:27.387820 timeit view: : 0.004
+2014-01-02 17:10:07.740455 timeit view: : 0.004
+2014-01-02 17:10:15.617533 timeit view: : 0.003
+2014-01-02 17:13:54.242214 timeit view: : 0.003
+2014-01-02 17:14:14.945691 timeit view: : 0.003
+2014-01-02 17:32:06.478217 timeit view: : 0.003
+2014-01-02 17:40:36.880061 timeit view: : 0.040
+2014-01-02 17:40:36.952147 timeit view: : 0.003
+2014-01-02 17:40:37.022095 timeit view: : 0.042
+2014-01-02 17:40:37.081884 timeit view: : 0.042
+2014-01-02 17:40:40.429920 timeit view: : 0.003
+2014-01-02 17:40:43.020522 timeit view: : 0.003
+2014-01-02 17:51:29.298823 timeit view: : 0.003
+2014-01-02 17:51:50.190188 timeit view: : 0.003
+2014-01-02 17:52:35.151615 timeit view: : 0.004
+2014-01-02 17:52:37.748759 timeit view: : 0.003
+2014-01-02 17:52:39.855246 timeit view: : 0.004
+2014-01-02 17:52:42.461643 timeit view: : 0.003
+2014-01-02 17:52:44.704452 timeit view: : 0.003
+2014-01-02 17:52:46.603048 timeit view: : 0.003
+2014-01-02 17:52:48.371443 timeit view: : 0.003
+2014-01-02 17:52:50.207169 timeit view: : 0.003
+2014-01-02 17:52:51.837882 timeit view: : 0.003
+2014-01-02 17:52:53.717718 timeit view: : 0.003
+2014-01-02 18:14:28.651006 timeit view: openid=1111&openkey=2222: 0.059
+2014-01-02 18:15:13.669286 timeit view: : 0.660
+2014-01-02 18:23:28.597478 timeit view: : 0.003
+2014-01-02 18:25:59.779767 timeit view: : 0.003
+2014-01-02 18:27:38.746855 timeit view: : 0.003
+2014-01-02 18:27:42.235948 timeit view: : 0.003
+2014-01-02 18:27:43.891637 timeit view: : 0.003
+2014-01-02 18:27:47.920060 timeit view: : 0.003
+2014-01-02 18:27:49.292072 timeit view: : 0.003
+2014-01-02 18:27:50.150027 timeit view: : 0.003
+2014-01-02 18:27:50.845370 timeit view: : 0.003
+2014-01-02 18:27:51.073408 timeit view: : 0.003
+2014-01-02 18:27:52.020450 timeit view: : 0.003
+2014-01-02 18:27:52.218978 timeit view: : 0.003
+2014-01-02 18:27:56.987085 timeit view: : 0.003
+2014-01-02 18:27:59.118881 timeit view: : 0.003
+2014-01-02 18:28:00.604429 timeit view: : 0.003
+2014-01-02 18:28:00.866879 timeit view: : 0.003
+2014-01-02 18:28:01.161932 timeit view: : 0.003
+2014-01-02 18:28:04.598733 timeit view: : 0.003
+2014-01-02 18:28:06.765596 timeit view: : 0.003
+2014-01-05 13:46:47.470918 timeit view: : 0.703
+2014-01-05 14:31:28.594316 timeit view: : 0.651
+2014-01-05 14:31:30.532250 timeit view: favicon.ico: 0.006
+2014-01-05 14:42:11.386074 timeit view: : 0.003
+2014-01-05 14:42:11.482505 timeit view: favicon.ico: 0.005
+2014-01-05 14:42:11.491732 timeit view: favicon.ico: 0.005
+2014-01-05 14:46:33.995913 timeit view: : 0.003
+2014-01-05 15:00:37.931220 timeit view: : 0.003
+2014-01-05 15:01:37.372814 timeit view: : 0.003
+2014-01-05 15:02:50.116745 timeit view: : 0.004
+2014-01-05 15:04:38.988174 timeit view: : 0.003
+2014-01-05 15:06:44.229985 timeit view: : 0.003
+2014-01-05 15:08:13.615051 timeit view: : 0.036
+2014-01-05 15:09:31.629231 timeit view: : 0.043
+2014-01-05 15:10:04.246033 timeit view: : 0.004
+2014-01-05 15:13:14.272626 timeit view: : 0.003
+2014-01-05 15:22:27.329035 timeit view: : 0.037
+2014-01-05 15:38:35.949307 timeit view: : 0.003
+2014-01-05 15:46:10.145801 timeit view: : 0.004
+2014-01-05 15:46:43.055113 timeit view: : 0.003
+2014-01-05 15:47:19.633820 timeit view: : 0.004
+2014-01-05 15:48:12.877937 timeit view: : 0.003
+2014-03-05 16:56:35.813385 timeit view: : 0.032
+2014-03-05 16:56:37.055071 timeit view: favicon.ico.favicon.ico: 0.009
+2014-03-05 17:00:36.083722 timeit view: : 0.662
+2014-03-05 17:00:36.445056 timeit view: favicon.ico.favicon.ico: 0.003
+2014-03-05 17:05:09.774303 timeit view: A6ksi.A6ksi: 0.007
+2014-03-05 17:05:09.793697 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.010
+2014-03-05 17:05:10.614446 timeit view: favicon.ico.favicon.ico: 0.003
+2014-03-05 17:05:17.620999 timeit view: A6ksi.A6ksi: 0.003
+2014-03-05 17:05:19.463767 timeit view: favicon.ico.favicon.ico: 0.003
+2014-03-05 17:09:28.333893 timeit view: A6ksi.A6ksi: 0.002
+2014-03-05 17:09:29.167573 timeit view: favicon.ico.favicon.ico: 0.010
+2014-03-05 17:09:47.935741 timeit view: A6ksi.A6ksi: 0.003
+2014-03-05 17:09:48.823558 timeit view: favicon.ico.favicon.ico: 0.003
+2014-03-05 17:10:45.005530 timeit view: A6ksi.A6ksi: 0.006
+2014-03-05 17:10:45.697314 timeit view: favicon.ico.favicon.ico: 0.009
+2014-03-05 17:24:56.891873 timeit view: A6ksi.A6ksi: 0.002
+2014-03-05 17:24:57.963925 timeit view: favicon.ico.favicon.ico: 0.003
+2014-03-05 17:25:38.035083 timeit view: A6ksi.A6ksi: 0.006
+2014-03-05 17:25:38.057570 timeit view: A6ksi.login.A6ksi.login: 0.012
+2014-03-05 17:25:38.357838 timeit view: favicon.ico.favicon.ico: 0.005
+2014-03-05 17:25:57.496958 timeit view: A6ksi.login.A6ksi.login: 0.016
+2014-03-05 17:25:57.805247 timeit view: favicon.ico.favicon.ico: 0.003
+2014-03-05 17:27:34.046317 timeit view: A6ksi.login.A6ksi.login: 0.048
+2014-03-05 17:27:34.062401 timeit view: A6ksi.main.A6ksi.main: 0.005
+2014-03-05 17:27:34.077257 timeit view: A6ksi.login.A6ksi.login: 0.004
+2014-03-05 17:27:34.405008 timeit view: favicon.ico.favicon.ico: 0.003
+2014-03-05 17:27:43.688629 timeit view: A6ksi.login.A6ksi.login: 0.054
+2014-03-05 17:27:43.706417 timeit view: A6ksi.main.A6ksi.main: 0.005
+2014-03-05 17:27:43.721991 timeit view: A6ksi.login.A6ksi.login: 0.004
+2014-03-05 17:27:43.999305 timeit view: favicon.ico.favicon.ico: 0.003
+2014-03-05 17:28:05.179249 timeit view: A6ksi.login.A6ksi.login: 0.004
+2014-03-05 17:28:05.460515 timeit view: favicon.ico.favicon.ico: 0.003
+2014-03-05 17:35:16.512650 timeit view: A6ksi.login.A6ksi.login: 0.069
+2014-03-05 17:35:16.528664 timeit view: A6ksi.main.A6ksi.main: 0.005
+2014-03-05 17:35:16.544384 timeit view: A6ksi.login.A6ksi.login: 0.004
+2014-03-05 17:35:16.864512 timeit view: favicon.ico.favicon.ico: 0.003
+2014-03-05 17:36:10.115544 timeit view: A6ksi.login.A6ksi.login: 0.069
+2014-03-05 17:36:10.143207 timeit view: A6ksi.main.A6ksi.main: 0.005
+2014-03-05 17:36:10.159331 timeit view: A6ksi.login.A6ksi.login: 0.004
+2014-03-05 17:36:10.480577 timeit view: favicon.ico.favicon.ico: 0.003
+admin admin
+check_password ok
+2014-03-05 17:48:58.521475 timeit view: A6ksi.login.A6ksi.login: 0.051
+2014-03-05 17:48:58.539983 timeit view: A6ksi.main.A6ksi.main: 0.005
+2014-03-05 17:48:58.565252 timeit view: A6ksi.login.A6ksi.login: 0.009
+2014-03-05 17:48:58.894367 timeit view: favicon.ico.favicon.ico: 0.004
+2014-03-05 17:50:25.023284 timeit view: A6ksi.login.main.A6ksi.login.main: 0.031
+2014-03-05 17:50:25.386825 timeit view: favicon.ico.favicon.ico: 0.010
+2014-03-05 17:50:30.101001 timeit view: favicon.ico.favicon.ico: 0.003
+admin admin
+check_password ok
+2014-03-05 18:01:48.068136 timeit view: A6ksi.login.A6ksi.login: 0.063
+2014-03-05 18:01:48.090495 timeit view: A6ksi.main.A6ksi.main: 0.010
+2014-03-05 18:01:48.205594 timeit view: A6ksi.left.A6ksi.left: 0.005
+2014-03-05 18:01:48.301180 timeit view: A6ksi.login.A6ksi.login: 0.005
+2014-03-05 18:01:48.609471 timeit view: favicon.ico.favicon.ico: 0.004
+2014-03-05 18:01:54.893458 timeit view: A6ksi.main.A6ksi.main: 0.002
+2014-03-05 18:01:55.022564 timeit view: A6ksi.left.A6ksi.left: 0.005
+2014-03-05 18:01:55.110361 timeit view: A6ksi.login.A6ksi.login: 0.004
+2014-03-05 18:01:55.384597 timeit view: favicon.ico.favicon.ico: 0.003
+2014-03-05 18:02:09.930801 timeit view: A6ksi.A6ksi: 0.007
+2014-03-05 18:02:09.973223 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.033
+2014-03-05 18:02:10.348094 timeit view: favicon.ico.favicon.ico: 0.008
+2014-03-05 18:02:15.575735 timeit view: A6ksi.A6ksi: 0.001
+2014-03-05 18:02:15.611533 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.020
+2014-03-05 18:02:15.900545 timeit view: favicon.ico.favicon.ico: 0.003
+2014-03-05 18:02:23.625877 timeit view: : 0.006
+2014-03-05 18:02:24.388159 timeit view: favicon.ico.favicon.ico: 0.008
+2014-03-05 18:02:29.838381 timeit view: A6ksi.A6ksi: 0.016
+2014-03-05 18:02:29.854624 timeit view: A6ksi.main.A6ksi.main: 0.003
+2014-03-05 18:02:29.947395 timeit view: A6ksi.left.A6ksi.left: 0.005
+2014-03-05 18:02:30.030236 timeit view: A6ksi.login.A6ksi.login: 0.005
+2014-03-05 18:02:30.236456 timeit view: favicon.ico.favicon.ico: 0.003
+2014-03-05 18:04:02.636044 timeit view: A6ksi.login.A6ksi.login: 0.004
+2014-03-05 18:04:02.979405 timeit view: favicon.ico.favicon.ico: 0.003
+admin admin
+check_password ok
+2014-03-05 18:04:11.175022 timeit view: A6ksi.login.A6ksi.login: 0.064
+2014-03-05 18:04:11.201402 timeit view: A6ksi.main.A6ksi.main: 0.003
+2014-03-05 18:04:11.296968 timeit view: A6ksi.left.A6ksi.left: 0.005
+2014-03-05 18:04:11.384923 timeit view: A6ksi.login.A6ksi.login: 0.004
+2014-03-05 18:04:11.609844 timeit view: favicon.ico.favicon.ico: 0.003
+2014-03-05 18:04:15.137692 timeit view: favicon.ico.favicon.ico: 0.003
+admin admin
+check_password ok
+2014-03-05 18:04:46.026021 timeit view: A6ksi.login.A6ksi.login: 0.058
+2014-03-05 18:04:46.047907 timeit view: A6ksi.main.A6ksi.main: 0.010
+2014-03-05 18:04:46.154287 timeit view: A6ksi.left.A6ksi.left: 0.005
+2014-03-05 18:04:46.245141 timeit view: A6ksi.login.A6ksi.login: 0.005
+2014-03-05 18:04:46.540466 timeit view: favicon.ico.favicon.ico: 0.004
+2014-03-06 16:11:22.827132 timeit view: A6ksi.login.A6ksi.login: 0.004
+2014-03-06 16:11:23.201294 timeit view: favicon.ico.favicon.ico: 0.003
+admin admin
+check_password ok
+2014-03-06 16:11:32.300068 timeit view: A6ksi.login.A6ksi.login: 0.049
+2014-03-06 16:11:32.314054 timeit view: A6ksi.main.A6ksi.main: 0.002
+2014-03-06 16:11:32.435038 timeit view: A6ksi.left.A6ksi.left: 0.005
+2014-03-06 16:11:32.540039 timeit view: A6ksi.login.A6ksi.login: 0.004
+2014-03-06 16:11:32.786166 timeit view: favicon.ico.favicon.ico: 0.003
+2014-03-08 13:43:38.686749 timeit view: : 0.099
+2014-03-08 13:43:40.120928 timeit view: favicon.ico.favicon.ico: 0.007
+2014-03-08 13:43:40.161090 timeit view: favicon.ico.favicon.ico: 0.011
+2014-03-08 13:43:59.758240 timeit view: : 0.012
+2014-03-08 13:44:08.792651 timeit view: admin.admin: 0.015
+2014-03-08 13:46:02.475825 timeit view: A6ksi.A6ksi: 0.007
+2014-03-08 13:46:02.596346 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.028
+2014-03-08 13:46:08.761006 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.024
+2014-03-08 13:46:53.798387 timeit view: A6ksi.A6ksi: 0.004
+2014-03-08 13:46:53.924105 timeit view: A6ksi.login.A6ksi.login: 0.044
+admin admin
+check_password ok
+2014-03-08 13:47:04.651314 timeit view: A6ksi.login.A6ksi.login: 0.144
+2014-03-08 13:47:04.751708 timeit view: A6ksi.main.A6ksi.main: 0.006
+2014-03-08 13:47:04.833228 timeit view: A6ksi.left.A6ksi.left: 0.013
+2014-03-08 13:47:04.855312 timeit view: A6ksi.login.A6ksi.login: 0.003
+2014-03-08 13:47:48.278459 timeit view: A6ksi.main.A6ksi.main: 0.002
+2014-03-08 13:47:48.370540 timeit view: A6ksi.left.A6ksi.left: 0.007
+2014-03-08 13:47:48.378201 timeit view: A6ksi.login.A6ksi.login: 0.004
+2014-03-08 13:49:36.340519 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.030
+2014-03-08 13:49:45.558018 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.020
+2014-03-08 13:50:24.099808 timeit view: A6ksi.A6ksi: 0.003
+2014-03-08 13:50:24.147484 timeit view: A6ksi.main.A6ksi.main: 0.001
+2014-03-08 13:50:24.321918 timeit view: A6ksi.left.A6ksi.left: 0.003
+2014-03-08 13:50:24.383909 timeit view: A6ksi.login.A6ksi.login: 0.003
+admin admin
+check_password ok
+2014-03-08 13:50:42.470053 timeit view: A6ksi.login.A6ksi.login: 0.056
+2014-03-08 13:50:42.546978 timeit view: A6ksi.main.A6ksi.main: 0.002
+2014-03-08 13:50:42.644816 timeit view: A6ksi.left.A6ksi.left: 0.003
+2014-03-08 13:50:42.773864 timeit view: A6ksi.login.A6ksi.login: 0.003
+2014-03-08 13:55:00.422962 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.024
+2014-03-08 13:57:40.691951 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.017
+2014-03-08 13:58:11.672517 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.020
+2014-03-08 13:58:15.115212 timeit view: A6ksi.A6ksi: 0.001
+2014-03-08 13:58:15.252254 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.027
+2014-03-08 13:58:40.560540 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.021
+2014-03-08 13:59:18.440455 timeit view: A6ksi.A6ksi: 0.003
+2014-03-08 13:59:18.571034 timeit view: A6ksi.main.A6ksi.main: 0.001
+2014-03-08 13:59:18.689930 timeit view: A6ksi.left.A6ksi.left: 0.003
+2014-03-08 13:59:18.814491 timeit view: A6ksi.login.A6ksi.login: 0.002
+admin admin
+check_password ok
+2014-03-08 14:04:36.686370 timeit view: A6ksi.login.A6ksi.login: 0.049
+2014-03-08 14:04:36.709826 timeit view: A6ksi.main.A6ksi.main: 0.002
+2014-03-08 14:04:37.218850 timeit view: A6ksi.left.A6ksi.left: 0.003
+2014-03-08 14:04:37.367596 timeit view: A6ksi.login.A6ksi.login: 0.002
+2014-03-08 14:05:10.914926 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.017
+2014-03-08 14:05:43.263124 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.017
+2014-03-08 14:05:59.452269 timeit view: A6ksi.A6ksi: 0.002
+2014-03-08 14:05:59.508031 timeit view: A6ksi.main.A6ksi.main: 0.001
+2014-03-08 14:05:59.674959 timeit view: A6ksi.left.A6ksi.left: 0.002
+2014-03-08 14:05:59.749478 timeit view: A6ksi.login.A6ksi.login: 0.002
+2014-03-08 14:06:19.681983 timeit view: A6ksi.main.A6ksi.main: 0.001
+2014-03-08 14:06:19.850445 timeit view: A6ksi.left.A6ksi.left: 0.003
+2014-03-08 14:06:19.879841 timeit view: A6ksi.login.A6ksi.login: 0.002
+2014-03-08 14:08:29.451686 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.027
+2014-03-08 14:11:50.646808 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.033
+2014-03-08 14:12:51.838434 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.028
+2014-03-08 14:13:16.039453 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.043
+2014-03-08 14:23:22.870901 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.017
+2014-03-08 14:25:26.603784 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.016
+2014-03-08 14:25:31.797314 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.037
+2014-03-08 14:33:17.314282 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.016
+2014-03-08 14:35:45.736793 timeit view: A6ksi.A6ksi: 0.003
+2014-03-08 14:35:45.768589 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.022
+2014-03-08 14:35:45.897987 timeit view: favicon.ico.favicon.ico: 0.006
+2014-03-08 14:35:46.003847 timeit view: favicon.ico.favicon.ico: 0.008
+2014-03-08 14:36:59.381459 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.020
+2014-03-08 14:38:53.977288 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.016
+/A6ksi/A6ksi/ ===============
+2014-03-08 14:39:00.071387 timeit view: A6ksi.A6ksi: 0.001
+2014-03-08 14:39:00.160789 timeit view: A6ksi.login.A6ksi.login: 0.008
+admin admin
+check_password ok
+2014-03-08 14:39:05.207900 timeit view: A6ksi.login.A6ksi.login: 0.090
+2014-03-08 14:39:05.301007 timeit view: A6ksi.main.A6ksi.main: 0.001
+2014-03-08 14:39:05.364704 timeit view: A6ksi.left.A6ksi.left: 0.011
+2014-03-08 14:39:05.380194 timeit view: A6ksi.login.A6ksi.login: 0.008
+2014-03-08 14:39:24.649449 timeit view: A6ksi.main.A6ksi.main: 0.001
+2014-03-08 14:39:24.791301 timeit view: A6ksi.left.A6ksi.left: 0.008
+2014-03-08 14:39:24.816063 timeit view: A6ksi.login.A6ksi.login: 0.012
+2014-03-08 14:39:59.375329 timeit view: A6ksi.main.A6ksi.main: 0.001
+2014-03-08 14:39:59.523645 timeit view: A6ksi.left.A6ksi.left: 0.003
+2014-03-08 14:39:59.538460 timeit view: A6ksi.login.A6ksi.login: 0.003
+2014-03-08 14:42:13.234483 timeit view: A6ksi.main.A6ksi.main: 0.001
+2014-03-08 14:42:13.365427 timeit view: A6ksi.left.A6ksi.left: 0.008
+2014-03-08 14:42:13.379155 timeit view: A6ksi.login.A6ksi.login: 0.002
+2014-03-08 14:42:22.676207 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.018
+2014-03-08 14:43:20.084211 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.018
+2014-03-08 14:43:21.550676 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.020
+2014-03-08 14:44:05.067649 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.017
+2014-03-08 14:44:07.645934 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.025
+2014-03-08 14:47:30.178766 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.016
+2014-03-08 14:51:41.393012 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.024
+/A6ksi/A6ksi/ ===============
+2014-03-08 14:51:56.330825 timeit view: A6ksi.A6ksi: 0.000
+2014-03-08 14:51:56.367987 timeit view: A6ksi.login.A6ksi.login: 0.003
+admin admin
+check_password ok
+2014-03-08 14:52:05.688169 timeit view: A6ksi.login.A6ksi.login: 0.070
+2014-03-08 14:52:05.795171 timeit view: A6ksi.main.A6ksi.main: 0.002
+2014-03-08 14:52:05.869398 timeit view: A6ksi.left.A6ksi.left: 0.003
+2014-03-08 14:52:05.939782 timeit view: A6ksi.login.A6ksi.login: 0.002
+2014-03-08 14:55:44.455837 timeit view: A6ksi.main.A6ksi.main: 0.001
+2014-03-08 14:55:44.580530 timeit view: A6ksi.left.A6ksi.left: 0.003
+2014-03-08 14:55:44.599945 timeit view: A6ksi.login.A6ksi.login: 0.002
+2014-03-08 14:55:54.661655 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.017
+/A6ksi/A6ksi/ ===============
+2014-03-08 14:55:59.569944 timeit view: A6ksi.A6ksi: 0.003
+2014-03-08 14:55:59.599605 timeit view: A6ksi.main.A6ksi.main: 0.003
+2014-03-08 14:55:59.759991 timeit view: A6ksi.left.A6ksi.left: 0.003
+2014-03-08 14:55:59.830164 timeit view: A6ksi.login.A6ksi.login: 0.003
+2014-03-08 14:59:12.607977 timeit view: A6ksi.main.A6ksi.main: 0.001
+2014-03-08 14:59:12.728632 timeit view: A6ksi.left.A6ksi.left: 0.003
+2014-03-08 14:59:12.745223 timeit view: A6ksi.login.A6ksi.login: 0.003
+2014-03-08 14:59:45.583157 timeit view: A6ksi.main.A6ksi.main: 0.001
+2014-03-08 14:59:45.722239 timeit view: A6ksi.left.A6ksi.left: 0.003
+2014-03-08 14:59:45.733174 timeit view: A6ksi.login.A6ksi.login: 0.002
+/A6ksi/A6ksi/ ===============
+2014-03-08 14:59:50.122593 timeit view: A6ksi.A6ksi: 0.003
+2014-03-08 14:59:50.161567 timeit view: A6ksi.main.A6ksi.main: 0.001
+2014-03-08 14:59:50.321969 timeit view: A6ksi.left.A6ksi.left: 0.003
+2014-03-08 14:59:50.380206 timeit view: A6ksi.login.A6ksi.login: 0.002
+2014-03-08 15:00:01.547909 timeit view: : 0.002
+2014-03-08 15:00:10.830269 timeit view: jkgjh.jkgjh: 0.002
+2014-03-08 15:04:39.655438 timeit view: jkgjh.jkgjh: 0.002
+2014-03-08 15:05:03.170226 timeit view: jkgjh.jkgjh: 0.002
+2014-03-08 15:09:57.242085 timeit view: jkgjh.jkgjh: 0.002
+2014-03-08 15:12:27.223232 timeit view: jkgjh;lkl.kgujkgk.jkgjh;lkl.kgujkgk: 0.002
+2014-03-08 15:17:49.173992 timeit view: jkgj.jkgj: 0.002
+2014-03-08 15:18:16.046390 timeit view: jkgj.jkgj: 0.002
+2014-03-08 15:18:26.118032 timeit view: jkgj.asdasd.jkgj.asdasd: 0.002
+2014-03-08 15:24:13.313818 timeit view: jkgj.asdasd.jkgj.asdasd: 0.002
+2014-03-08 15:25:27.702294 timeit view: jkgj.asdasd.jkgj.asdasd: 0.002
+2014-03-08 15:26:06.180028 timeit view: jkgj.asdasd.jkgj.asdasd: 0.002
+2014-03-08 15:27:43.157739 timeit view: jkgj.asdasd.jkgj.asdasd: 0.002
+2014-03-08 15:31:51.594120 timeit view: jkgj.asdasd.jkgj.asdasd: 0.002
+2014-03-08 15:35:13.211757 timeit view: jkgj.asdasd.jkgj.asdasd: 0.002
+2014-03-08 15:40:45.227531 timeit view: adksi.adksi: 0.002
+2014-03-08 15:40:51.179720 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.017
+/A6ksi/A6ksi/A6ksi/A6ksi/ ======================
+2014-03-08 15:50:16.115147 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.042
+/A6ksi/A6ksi/A6ksi/A6ksi/ in timeview  ======================
+2014-03-08 15:50:49.711413 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.028
+/ in timeview  ======================
+2014-03-08 15:51:25.635171 timeit view: : 0.701
+/api/api/ in timeview  ======================
+2014-03-08 15:52:42.261082 timeit view: api.api.user.scene: 0.007
+/api/api/ in timeview  ======================
+2014-03-08 15:55:38.318403 timeit view: api.api.user.scene: 0.007
+/api/api/ in timeview  ======================
+2014-03-08 16:20:07.475241 timeit view: api.api.user.scene: 0.014
+/favicon.ico/favicon.ico in timeview  ======================
+2014-03-08 16:20:08.722298 timeit view: favicon.ico.favicon.ico: 0.011
+/api/api/ in timeview  ======================
+2014-03-08 16:42:01.779168 timeit view: api.api.user.scene: 0.007
+/api/api/ in timeview  ======================
+2014-03-08 16:49:13.903091 timeit view: api.api.user.scene: 0.009
+/api/api/ in timeview  ======================
+2014-03-08 16:49:22.094446 timeit view: api.api.user.scene: 0.007
+/A6ksi/A6ksi/A6ksi/A6ksi/ in timeview  ======================
+2014-03-08 16:49:32.052136 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.044
+/A6ksi/A6ksi/A6ksi/A6ksi/ in timeview  ======================
+2014-03-08 16:50:45.703608 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.041
+/1/1 in timeview  ======================
+2014-03-08 16:59:26.729971 timeit view: 1.1: 0.003
+/1/1 in timeview  ======================
+2014-03-08 17:02:36.043322 timeit view: 1.1: 0.015
+/A6ksi/A6ksi/A6ksi/A6ksi/ in timeview  ======================
+2014-03-08 17:02:41.751541 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.021
+/A6ksi/A6ksi/A6ksi/A6ksi/ in timeview  ======================
+2014-03-08 17:04:06.456059 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.025
+/A6ksi/A6ksi/A6ksi/A6ksi/ in timeview  ======================
+2014-03-08 17:04:11.175039 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.019
+/A6ksi/A6ksi/A6ksi/A6ksi/ in timeview  ======================
+2014-03-08 17:04:12.298673 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.025
+/A6ksi/A6ksi/A6ksi/A6ksi in timeview  ======================
+2014-03-08 17:04:29.302858 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.028
+/A6ksi/A6ksi/A6ksi/A6ksi in timeview  ======================
+2014-03-08 17:07:11.878356 timeit view: A6ksi.A6ksi.A6ksi.A6ksi: 0.040

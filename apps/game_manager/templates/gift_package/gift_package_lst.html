@@ -1,0 +1,55 @@
+﻿{% extends "base/base.html" %}
+
+{%block right_panel%}
+        <div class="maincontent">
+            <div class="maincontentinner">
+
+                <h4 class="widgettitle">礼包类型信息</h4>
+                <div id="dyntable_wrapper" class="dataTables_wrapper" role="grid">
+                    <table aria-describedby="dyntable_info" id="dyntable" class="table table-bordered responsive dataTable">
+                        <colgroup>
+                            <!--<col class="con0" style="align: center; width: 4%">-->
+                            <col class="con1">
+                            <col class="con0">
+                            <col class="con1">
+                            <col class="con0">
+                            <col class="con1">
+                        </colgroup>
+                        <thead>
+                            <tr role="row">
+                                {% for head in head_lst %}
+                                    <th style="width: {{head.width}}px;" colspan="1" rowspan="1" aria-controls="dyntable" tabindex="0" role="columnheader" class="head{{forloop.counter0}} sorting">{{head.name}}</th>
+                                {% endfor %}
+                                <!--<th style="width: 297px;" colspan="1" rowspan="1" aria-controls="dyntable" tabindex="0" role="columnheader" class="head0 sorting">Rendering engine</th>-->
+                                <!--<th style="width: 375px;" colspan="1" rowspan="1" aria-controls="dyntable" tabindex="0" role="columnheader" class="head1 sorting">Browser</th>-->
+                                <!--<th style="width: 350px;" colspan="1" rowspan="1" aria-controls="dyntable" tabindex="0" role="columnheader" class="head0 sorting">Platform(s)</th>-->
+                                <!--<th style="width: 257px;" colspan="1" rowspan="1" aria-controls="dyntable" tabindex="0" role="columnheader" class="head1 sorting">Engine version</th>-->
+                                <!--<th style="width: 175px;" colspan="1" rowspan="1" aria-controls="dyntable" tabindex="0" role="columnheader" class="head0 sorting">CSS grade</th>-->
+                            </tr>
+                        </thead>
+
+                        <tbody aria-relevant="all" aria-live="polite" role="alert">
+                            {% for row in gift_package %}
+                                <tr class="gradeX odd">
+                                    {% for column in row %}
+                                        <td class="center">{{column}}</td>
+                                    {% endfor %}
+                                     <td class="center" width="50">
+                                        <form class = 'button_one_line' action="/Tyranitar6/server/gift_package_edit/" method="post" onsubmit="return checkForm()" value={{submit_value}}>
+                                            <input name="gift_id" type="hidden" value={{row.0}}>
+                                                <button type="submit" class="btn btn-primary" value={{submit_value}}  >编辑</button>
+                                        </form>
+                                    </td>
+
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                <h4>
+                    <a href="/Tyranitar6/server/gift_package_add"><b>增加礼包类型</b></a>
+                </h4>
+
+                </div>
+            </div>
+        </div>
+{%endblock%}

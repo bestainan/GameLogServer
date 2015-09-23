@@ -1,0 +1,47 @@
+{% extends "base/base.html" %}
+
+{%block right_panel%}
+        <div class="maincontent">
+            <div class="maincontentinner">
+
+                <div class="widget">
+                    <h4 class="widgettitle">兑换码信息</h4>
+                    <div class="widgetcontent">
+                        <form class="stdform" action="/Tyranitar6/server/exchange_code_generate/" method="post">
+                            <div class="par">
+                                <p>
+                                    <label>礼包类型:</label>
+                                    <select  name="gift_id" class="uniformselect" >
+                                        {% for key,val in gift_name_val%}
+                                            {% if key == 1 %}
+                                                <option value ={{key}} selected="selected">
+                                            {% else %}
+                                                <option value ={{key}} >
+                                            {% endif %}
+                                                    {{val}}
+                                                </option>
+                                        {% endfor %}
+                                    </select>
+                                </p>
+                                <p>
+                                    <label>生成兑换码数量:</label>
+                                    <input type="text" name="num" value="10" />
+                                </p>
+
+                                <span class="stdformbutton">
+                                    <button type="submit" class="btn btn-primary">&nbsp; 确&nbsp;认&nbsp;</button>
+                                </span>
+                                <!--<button class="btn btn-primary">确定</button>-->
+                            </div>
+                        </form>
+                    </div><!--widgetcontent-->
+
+                    <h4>
+                        <a href="/Tyranitar6/server/exchange_code_output_csv"><b>导出兑换码</b></a>
+                    </h4>
+
+                </div><!--widget-->
+
+            </div>
+        </div>
+{%endblock%}

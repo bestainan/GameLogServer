@@ -1,0 +1,92 @@
+{% extends "base/base.html" %}
+
+{%block script%}
+<!--<script type="text/javascript">-->
+ <!--jQuery(document).ready(function($) {-->
+    <!--$('#upload_btn').click(function() {-->
+        <!--jQuery.alerts.dialogClass = 'alert-danger';-->
+        <!--jAlert('This is a custom alert box for danger', 'Alert Danger', function(){-->
+                   <!--jQuery.alerts.dialogClass = null; // reset to default-->
+        <!--});-->
+  <!--});-->
+<!--});-->
+<!--</script>-->
+{%endblock%}
+
+{%block right_panel%}
+        <div class="maincontent">
+            <div class="maincontentinner">
+
+                <div class="widget">
+                    <h4 class="widgettitle">配置发布</h4>
+                    <div class="widgetcontent">
+                        <form class="stdform" action="/Tyranitar6/server/server_config/publish/" method="post" enctype="multipart/form-data">
+                            <h4>选择配置文件:</h4>
+                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                <div class="input-append">
+                                <div class="uneditable-input span3">
+                                    <i class="iconfa-file fileupload-exists"></i>
+                                    <span class="fileupload-preview"></span>
+                                </div>
+                                <span class="btn btn-file"><span class="fileupload-new">选择文件</span>
+                                <span class="fileupload-exists">改变文件</span>
+                                <input name="upload_file" type="file"></span>
+                                <!--<a href="#" class="btn fileupload-exists" data-dismiss="fileupload">清除选择</a>-->
+                                </div>
+                            </div>
+                            {% if status == 1 %}
+                            <div class="alert alert-error">
+                                请上传一个配置文件或者ZIP格式压缩包
+                            </div>
+                            {% endif %}
+                            {% if status == 2 %}
+                            <div class="alert alert-error">
+                                上传配置替换失败！！
+                            </div>
+                            {% endif %}
+                            <button type="submit" id="upload_btn" class="btn btn-primary">&nbsp; 上&nbsp;传&nbsp;</button>
+                        </form>
+                    </div><!--widgetcontent-->
+                </div><!--widget-->
+
+                <h4 class="widgettitle">配置文件详情</h4>
+                <div id="dyntable_wrapper" class="dataTables_wrapper" role="grid">
+                    <table aria-describedby="dyntable_info" id="dyntable" class="table table-bordered responsive dataTable">
+                        <colgroup>
+                            <!--<col class="con0" style="align: center; width: 4%">-->
+                            <col class="con1">
+                            <col class="con0">
+                            <col class="con1">
+                            <col class="con0">
+                            <col class="con1">
+                        </colgroup>
+                        <thead>
+                            <tr role="row">
+                                {% for head in head_lst %}
+                                    <th style="width: {{head.width}}px;" colspan="1" rowspan="1" aria-controls="dyntable" tabindex="0" role="columnheader" class="head{{forloop.counter0}} sorting">{{head.name}}</th>
+                                {% endfor %}
+                            </tr>
+
+                        </thead>
+
+                        <tbody aria-relevant="all" aria-live="polite" role="alert">
+                            {% for row in config_lst %}
+                                <tr class="gradeX odd">
+                                    <td class="left">{{row.name}}</td>
+                                    <td class="left">{{row.version}}</td>
+                                    <td class="left">
+                                        <form class="stdform" action="/Tyranitar6/server/server_config/remove_local_config/" method="post" enctype="multipart/form-data">
+                                            <input id="config_name" name="config_name" type="hidden" value={{row.name}}>
+                                            <button type="submit" id="remove" class="btn btn-primary">删除</button>
+                                        </form>
+                                    </td>
+
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+{%endblock%}

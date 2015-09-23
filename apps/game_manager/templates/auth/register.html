@@ -1,0 +1,52 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>管理员注册</title>
+    <link rel="stylesheet" href="{% static 'css/style.default.css'%}" tppabs="http://themepixels.com/main/themes/demo/webpage/shamcey/css/style.default.css" type="text/css" />
+    <!--<link rel="stylesheet" href="{% static 'css/style.shinyblue.css'%}" tppabs="http://themepixels.com/main/themes/demo/webpage/shamcey/css/style.shinyblue.css" type="text/css" />-->
+</head>
+<body class="register_page">
+    <div class="loginpanel">
+        <form action="" class="loginpanelinner" method="post">
+
+            <div class="widgetbox login-information">
+                <h4 class="widgettitle">超级管理员注册</h4>
+                <div class="widgetcontent">
+                    <p>
+                        <label>用户名:</label>
+                        <input type="text" name="account" placeholder="请输入账号" />
+                    </p>
+                    <p>
+                        <label>密码:</label>
+                        <input type="password" name="password" id="password" placeholder="请输入密码" />
+                    </p>
+                    <p>
+                        <label>再次输入密码:</label>
+                        <input type="password" name="re_password" id="re_password" placeholder="请再次输入密码" />
+                    </p>
+                    {% if status == 1 %}
+                    <div class="alert alert-error">
+                        错误:两次输入的密码不同
+                    </div>
+                    {% endif %}
+                    <p>
+                        <label>名字:</label>
+                        <input type="text" name="name" class="input-xlarge" value="Theme" />
+                    </p>
+                    <p>
+                        <label>描述:</label>
+                        <textarea name="description" class="span8"></textarea>
+                    </p>
+                </div>
+            </div>
+            <div class="widgetbox personal-information">
+            <p>
+                <button type="submit" class="btn btn-primary">注册</button>
+            </p>
+        </form>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+{% extends "base/base.html" %}
+
+{%block script%}
+<!--<script type="text/javascript">-->
+ <!--jQuery(document).ready(function($) {-->
+    <!--$('#upload_btn').click(function() {-->
+        <!--jQuery.alerts.dialogClass = 'alert-danger';-->
+        <!--jAlert('This is a custom alert box for danger', 'Alert Danger', function(){-->
+                   <!--jQuery.alerts.dialogClass = null; // reset to default-->
+        <!--});-->
+  <!--});-->
+<!--});-->
+<!--</script>-->
+{%endblock%}
+
+{%block right_panel%}
+<div class="maincontent">
+    <div class="maincontentinner">
+        <div class="widget">
+            <h4 class="widgettitle">各服务器配置详情</h4>
+            <div class="widgetcontent">
+
+                <div class="tabs-left">
+                    <ul class="nav nav-tabs">
+                        <!--遍历服务器列表-->
+                        {% for server_dat in server_name_lst %}
+                            <!--默认选择第一个服务器-->
+                            {% if server_dat.id == select_server_id %}
+                            <li class="active">
+                            {% else %}
+                            <li class="">
+                            {% endif %}
+                                <a data-toggle="tab" href="#{{server_dat.id}}">{{server_dat.name}}</a></li>
+                        {% endfor %}
+                    </ul>
+                    <div class="tab-content">
+                        {% for server_dat in server_name_lst %}
+                            {% if server_dat.id == select_server_id %}
+                                <div id={{server_dat.id}} class="tab-pane active">
+                            {% else %}
+                                <div id={{server_dat.id}} class="tab-pane">
+                            {% endif %}
+                                    <!--提交表单-->
+                                    {% for compare_dat in config_compare_lst %}
+                                        {% if compare_dat.id == server_dat.id %}
+                                            {% if not compare_dat.cmem %}
+                                                <div class="alert alert-error">
+                                                    连接游戏逻辑服务器CMEM失败！！！
+                                                </div>
+                                            {% else %}
+                                                <!--开始更新表单-->
+                                                <label>当前游戏服务器版本号: {{compare_dat.version}}</label>
+                                                <form class="stdform" action="/Tyranitar6/server/server_config/change_server_version/" method="post" enctype="multipart/form-data">
+                                                    <input id="server_id2" name="server_id2" type="hidden" value={{server_dat.id}}>
+                                                    <input id="new_version" name="new_version"  value={{compare_dat.version}}>
+                                                    <button type="submit" id="change_server_version" class="btn btn-primary">更新服务器版本号</button>
+                                                </form>
+                                                <p></p>
+                                                <label>服务器配置更新时间戳: {{compare_dat.time}}</label>
+                                                <form class="stdform" action="/Tyranitar6/server/server_config/change_server_config/" method="post" enctype="multipart/form-data">
+                                                    <input id="server_id" name="server_id" type="hidden" value={{server_dat.id}}>
+                                                    <button type="submit" id="upload_btn" class="btn btn-primary">更新服务器配置</button>
+                                                </form>
+                                                <label color="red">所有显示出来的配置表都是与后台服务器版本不同的</label>
+                                            {% endif %}
+                                        {% endif %}
+                                    {% endfor %}
+
+                                    <table aria-describedby="dyntable_info" id="table" class="table">
+                                        <colgroup>
+                                            <!--<col class="con0" style="align: center; width: 4%">-->
+                                            <col class="con1">
+                                            <col class="con0">
+                                            <col class="con1">
+                                            <col class="con0">
+                                            <col class="con1">
+                                        </colgroup>
+                                        <thead>
+                                            <tr role="row">
+                                                {% for head in head_lst %}
+                                                    <th style="width: {{head.width}}px;" colspan="1" rowspan="1" aria-controls="dyntable" tabindex="0" role="columnheader" class="head{{forloop.counter0}} sorting">{{head.name}}</th>
+                                                {% endfor %}
+                                            </tr>
+                                        </thead>
+
+                                        <tbody aria-relevant="all" aria-live="polite" role="alert">
+                                            {% for compare_dat in config_compare_lst %}
+                                                {% if compare_dat.id == server_dat.id %}
+                                                    {% for file_name, version in compare_dat.update_files.items %}
+                                                        <tr class="gradeX odd">
+                                                            <td class="left" >{{file_name}}</td>
+                                                            <td class="left" style="color: #ff0000;">{{version}}</td>
+                                                        </tr>
+                                                    {% endfor %}
+
+                                                {% endif %}
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                        {% endfor %}
+                    </div><!--tab-content-->
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{%endblock%}

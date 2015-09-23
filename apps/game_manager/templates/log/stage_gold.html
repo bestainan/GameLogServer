@@ -1,0 +1,74 @@
+{% extends "base/base.html" %}
+
+{%block right_panel%}
+        <div class="maincontent">
+            <div class="maincontentinner">
+
+                <div class="widget">
+                    <h4 class="widgettitle">数据筛选</h4>
+                    <div class="widgetcontent">
+                        <form class="stdform" action="/Tyranitar6/log/stage_gold/" method="post">
+                            <div class="par">
+                                <label>查询开始日期:</label>
+                                <span class="field"><input style="cursor:pointer" readonly="true" id="start_date_picker"  name="search_start_date" class="input-small" type="text" value={{search_start_date}}></span>
+                                <label>查询结束日期:</label>
+                                <span class="field"><input style="cursor:pointer" readonly="true" id="end_date_picker" name="search_end_date" class="input-small" type="text" value={{search_end_date}}></span>
+                                <!--<br>-->
+                                <label>游戏区服:</label>
+                                <span class="field">
+                                <select id="server_id" name="server_id" class="uniformselect" value={{server_id}}>
+                                    {% for content in server_list %}
+                                        <option value="{{content.id}}" {% ifequal content.id cur_server_id %}selected="selected"{% endifequal %}>
+                                            {{content.name}}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                                </span>
+                                <span class="stdformbutton">
+                                    <button class="btn btn-primary">&nbsp; 提&nbsp;交&nbsp;</button>
+                                </span>
+                                <!--<button class="btn btn-primary">确定</button>-->
+                            </div>
+                        </form>
+                    </div><!--widgetcontent-->
+                </div><!--widget-->
+
+                <h4 class="widgettitle">金币副本</h4>
+                <div id="dyntable_wrapper" class="dataTables_wrapper" role="grid">
+                    <table aria-describedby="dyntable_info" id="dyntable" class="table table-bordered responsive dataTable">
+                        <colgroup>
+                            <!--<col class="con0" style="align: center; width: 4%">-->
+                            <col class="con1">
+                            <col class="con0">
+                            <col class="con1">
+                            <col class="con0">
+                            <col class="con1">
+                        </colgroup>
+                        <thead>
+                            <tr role="row">
+                                {% for head in head_lst %}
+                                    <th style="width: {{head.width}}px;" colspan="1" rowspan="1" aria-controls="dyntable" tabindex="0" role="columnheader" class="head{{forloop.counter0}} sorting">{{head.name}}</th>
+                                {% endfor %}
+                                <!--<th style="width: 297px;" colspan="1" rowspan="1" aria-controls="dyntable" tabindex="0" role="columnheader" class="head0 sorting">Rendering engine</th>-->
+                                <!--<th style="width: 375px;" colspan="1" rowspan="1" aria-controls="dyntable" tabindex="0" role="columnheader" class="head1 sorting">Browser</th>-->
+                                <!--<th style="width: 350px;" colspan="1" rowspan="1" aria-controls="dyntable" tabindex="0" role="columnheader" class="head0 sorting">Platform(s)</th>-->
+                                <!--<th style="width: 257px;" colspan="1" rowspan="1" aria-controls="dyntable" tabindex="0" role="columnheader" class="head1 sorting">Engine version</th>-->
+                                <!--<th style="width: 175px;" colspan="1" rowspan="1" aria-controls="dyntable" tabindex="0" role="columnheader" class="head0 sorting">CSS grade</th>-->
+                            </tr>
+                        </thead>
+
+                        <tbody aria-relevant="all" aria-live="polite" role="alert">
+                            {% for row in row_lst %}
+                                <tr class="gradeX odd">
+                                    {% for column in row %}
+                                        <td class="center">{{column}}</td>
+                                    {% endfor %}
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+{%endblock%}

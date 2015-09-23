@@ -1,0 +1,69 @@
+{% extends "base/base.html" %}
+
+{%block right_panel%}
+        <div class="maincontent">
+            <div class="maincontentinner">
+
+                <div class="widget">
+                    <h4 class="widgettitle">添加服务器</h4>
+                    <div class="widgetcontent">
+                        <form class="stdform" action="/Tyranitar6/server/server_update/" method="post">
+                            <div class="par">
+                                <p>
+                        <label>服务器ID:</label>
+                        <input type="text" name="server_id" placeholder="请输入服务器ID" value="10001"/>
+                    </p>
+                    <p>
+                        <label>URL:</label>
+                        <input type="text" name="url" placeholder="请输入URL" value=""/>
+                    </p>
+                    <p>
+                        <label>服务器名:</label>
+                        <input type="text" name="name" placeholder="请输入服务器名" value="服务器名"/>
+                    </p>
+                    <label>服务器状态:</label>
+                    <!-- -->
+                    <select  name="server_state" class="uniformselect" >
+                                    {% for key in server_state_val%}
+                                            <option value ={{forloop.counter0}} selected="selected">
+                                                {{key}}
+                                            </option>
+                                    {% endfor %}
+                    </select>
+
+                    <p>
+                        <label>版本号:</label>
+                        <input type="text" name="version" placeholder="请输入版本号" value="1.6.0705" />
+                    </p>
+                    <p>
+                        <label>开服时间:</label>
+                        <span class="field"><input style="cursor:pointer" readonly="true" id="start_date_picker"  name="open_server_time" value="07/30/2015" class="input-small" type="text" ></span>
+
+                    </p>
+
+                    <p>
+                        <label>客户端隐藏:</label>
+                        <select  name="server_hidden" class="uniformselect" >
+                                    {% for key in server_hidden_val%}
+                                            <option value ={{forloop.counter0}} selected="selected">
+                                                {{key}}
+                                            </option>
+                                    {% endfor %}
+                        </select>
+                    </p>
+
+                             <!--<p>-->
+                                <!--<button type="submit" class="btn btn-primary">确认</button>-->
+                            <!--</p>-->
+                                <span class="stdformbutton">
+                                    <button type="submit" class="btn btn-primary">&nbsp; 确&nbsp;认&nbsp;</button>
+                                </span>
+                                <!--<button class="btn btn-primary">确定</button>-->
+                            </div>
+                        </form>
+                    </div><!--widgetcontent-->
+                </div><!--widget-->
+
+            </div>
+        </div>
+{%endblock%}

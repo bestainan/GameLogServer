@@ -1,0 +1,117 @@
+{% extends "base/base.html" %}
+
+{%block right_panel%}
+        <div class="maincontent">
+            <div class="maincontentinner">
+
+                <div class="widget">
+                    <h4 class="widgettitle">编辑版本公告</h4>
+                    <div class="widgetcontent">
+                        <form class="stdform" action="/Tyranitar6/server/gift_package_update/" method="post">
+                            <div class="par">
+                                <p>
+                                    <label>版本号:</label>
+                                    <input type="text" name="gift_id" value={{gift.id}} readOnly="true" />
+                                </p>
+                                <p>
+                                    <label>平台:</label>
+                                    <select  name="platform_id" class="uniformselect" >
+                                                {% for key,val in platform_val%}
+                                                    {% if gift.platform_id == key %}
+                                                        <option value ={{gift.platform_id}} selected="selected">
+                                                    {% else %}
+                                                        <option value ={{key}} >
+                                                    {% endif %}
+                                                            {{val}}
+                                                        </option>
+                                                {% endfor %}
+                                    </select>
+                                </p>
+                                <p>
+                                    <label>服务器ID:</label>
+                                    <textarea cols="1"  rows="1" name="server_id" >{{gift.server_id}}</textarea>
+                                </p>
+                                <p>
+                                    <label>截止日期:</label>
+                                    <span class="field"><input style="cursor:pointer" readonly="true" id="start_date_picker"  name="endtime" value={{gift.endtime}} class="input-small" type="text" ></span>
+                                </p>
+                                <p>
+                                    <label>礼包类型名:</label>
+                                    <input type="text" name="name" value={{gift.name}} />
+                                </p>
+                                <p>
+                                    <label>物品1:</label>
+                                    <select  name="item_id1" class="uniformselect" >
+                                                {% for key,val in item_val%}
+                                                    {% if gift.item_id1 == key %}
+                                                        <option value ={{gift.item_id1}} selected="selected">
+                                                    {% else %}
+                                                        <option value ={{key}} >
+                                                    {% endif %}
+                                                            {{val}}
+                                                        </option>
+                                                {% endfor %}
+                                    </select>
+
+                                </p>
+                                <p>
+                                    <label>物品数量1(int):</label>
+                                    <input type="text" name="item_num1" value ={{gift.item_num1}} />
+                                </p>
+                                <p>
+                                    <label>物品2:</label>
+                                    <select  name="item_id2" class="uniformselect" >
+                                                {% for key,val in item_val%}
+                                                    {% if gift.item_id2 == key %}
+                                                        <option value ={{gift.item_id2}} selected="selected">
+                                                    {% else %}
+                                                        <option value ={{key}} >
+                                                    {% endif %}
+                                                            {{val}}
+                                                        </option>
+                                                {% endfor %}
+                                    </select>
+
+                                </p>
+                                <p>
+                                    <label>物品数量2(int):</label>
+                                    <input type="text" name="item_num2" value ={{gift.item_num2}} />
+                                </p>
+                                <p>
+                                    <label>物品3:</label>
+                                    <select  name="item_id3" class="uniformselect" >
+                                                {% for key,val in item_val%}
+                                                    {% if gift.item_id3 == key %}
+                                                        <option value ={{gift.item_id3}} selected="selected">
+                                                    {% else %}
+                                                        <option value ={{key}} >
+                                                    {% endif %}
+                                                            {{val}}
+                                                        </option>
+                                                {% endfor %}
+                                    </select>
+
+                                </p>
+                                <p>
+                                    <label>物品数量3(int):</label>
+                                    <input type="text" name="item_num3" value ={{gift.item_num3}} />
+                                </p>
+                                <p>
+                                    <label>金币(int):</label>
+                                    <input type="text" name="gold" value ={{gift.gold}} />
+                                </p>
+                                <p>
+                                    <label>钻石(int):</label>
+                                    <input type="text" name="stone" value ={{gift.stone}} />
+                                </p>
+                                <span class="stdformbutton">
+                                    <button type="submit" class="btn btn-primary">&nbsp; 确&nbsp;认&nbsp;</button>
+                                </span>
+                            </div>
+                        </form>
+                    </div><!--widgetcontent-->
+                </div><!--widget-->
+
+            </div>
+        </div>
+{%endblock%}

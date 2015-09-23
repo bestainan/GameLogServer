@@ -1,0 +1,37 @@
+﻿{% extends "base/base.html" %}
+
+{%block right_panel%}
+        <div class="maincontent">
+            <div class="maincontentinner">
+
+                <h4 class="widgettitle">确认移除全部的BUG？？</h4>
+                <div id="dyntable_wrapper" class="dataTables_wrapper" role="grid">
+                    <table aria-describedby="dyntable_info" id="dyntable" class="table table-bordered responsive dataTable">
+                        <colgroup>
+                            <!--<col class="con0" style="align: center; width: 4%">-->
+                            <col class="con1">
+                            <col class="con0">
+                            <col class="con1">
+                            <col class="con0">
+                            <col class="con1">
+                        </colgroup>
+
+
+                        <tbody aria-relevant="all" aria-live="polite" role="alert">
+
+                                <tr class="gradeX odd">
+                                     <td class="center" width="50">
+                                        <form class = 'button_one_line' action="/Tyranitar6/server/player_commit_bugs_del_all/" method="post" onsubmit="return checkForm()">
+                                            <input name="server_id" type="hidden" value={{bug_dict.server_id}}>
+                                            <button type="submit" class="btn btn-primary" >确认</button>
+                                        </form>
+                                    </td>
+
+                                </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+{%endblock%}

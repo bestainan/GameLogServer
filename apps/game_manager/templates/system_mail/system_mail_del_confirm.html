@@ -1,0 +1,58 @@
+﻿{% extends "base/base.html" %}
+
+{%block right_panel%}
+        <div class="maincontent">
+            <div class="maincontentinner">
+
+                <h4 class="widgettitle">确认删除这条系统邮件？</h4>
+                <div id="dyntable_wrapper" class="dataTables_wrapper" role="grid">
+                    <table aria-describedby="dyntable_info" id="dyntable" class="table table-bordered responsive dataTable">
+                        <colgroup>
+                            <!--<col class="con0" style="align: center; width: 4%">-->
+                            <col class="con1">
+                            <col class="con0">
+                            <col class="con1">
+                            <col class="con0">
+                            <col class="con1">
+                        </colgroup>
+                        <thead>
+                            <tr role="row">
+                                {% for head in head_lst %}
+                                    <th style="width: {{head.width}}px;" colspan="1" rowspan="1" aria-controls="dyntable" tabindex="0" role="columnheader" class="head{{forloop.counter0}} sorting">{{head.name}}</th>
+                                {% endfor %}
+                            </tr>
+                        </thead>
+
+                        <tbody aria-relevant="all" aria-live="polite" role="alert">
+
+                                <tr class="gradeX odd">
+
+                                    <td class="center">{{system_mail_info.version}}</td>
+                                    <td class="center">{{system_mail_info.server_id}}</td>
+                                    <td class="center">{{system_mail_info.target_user_uid}}</td>
+                                    <td class="center">{{system_mail_info.title}}</td>
+                                    <td class="center">{{system_mail_info.send_time}}</td>
+                                    <td class="center">{{system_mail_info.expiry_date}}</td>
+                                    <td class="center">{{system_mail_info.gold}}</td>
+                                    <td class="center">{{system_mail_info.stone}}</td>
+                                    <td class="center">{{system_mail_info.free_draw_material}}</td>
+                                    <td class="center">{{system_mail_info.item}}</td>
+                                    <td class="center">{{system_mail_info.item_num}}</td>
+                                    <td class="center">{{system_mail_info.monster}}</td>
+                                    <td class="center">{{system_mail_info.monster_star_level}}</td>
+
+                                     <td class="center" width="50">
+                                        <form class = 'button_one_line' action="/Tyranitar6/server/system_mail_del/" method="post" onsubmit="return checkForm()">
+                                            <input name="version" type="hidden" value={{system_mail_info.version}}  />
+                                            <button type="submit" class="btn btn-primary" >确认</button>
+                                        </form>
+                                    </td>
+
+                                </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+{%endblock%}
